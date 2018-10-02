@@ -1,5 +1,9 @@
 # Wikilaterus
-Equilaterus' Wiki
+Equilaterus' Wiki based on Jekyll minima theme.
+
+## Wiki to Github Page Plugin
+
+Thanks to djacquel for this: https://github.com/djacquel/WikiToJekyll
 
 # License
 

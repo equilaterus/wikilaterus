@@ -1,0 +1,3 @@
+cd..
+rake wikibuild
+pause
