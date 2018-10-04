@@ -25,3 +25,48 @@ menu: wiki
 ## Other guides
 
 * Global error handling in [ASP Core](https://code-maze.com/global-error-handling-aspnetcore/)
+
+## ASP Core Web API Example
+
+```csharp
+[Route("api/[controller]")]
+[ApiController]
+public class UsersController : ControllerBase
+{
+    protected readonly IUsersRepository _repository;
+
+    public UsersController(IUsersRepository repository)
+    {
+        _repository = repository;
+    }
+
+    [HttpGet]
+    [ProducesResponseType(200)]
+    public async Task<ActionResult<IEnumerable<User>>> GetAll()
+    {
+        return await _repository.GetAll();
+    }        
+
+    [HttpGet("{username}")]
+    [ProducesResponseType(200)]
+    [ProducesResponseType(404)]
+    public async Task<ActionResult<User>> GetById(string username)
+    {
+        var item = await _repository.GetByUsername(username);
+        if (item == null)
+        {
+            return NotFound();
+        }
+        return item;
+    }
+
+    [HttpPost]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
+    public async Task<ActionResult<User>> AddUser(User user)
+    {
+        await _repository.AddUser(user);
+        return CreatedAtAction(nameof(GetById), new { id = user.Username }, user);
+    }
+}
+```

@@ -43,7 +43,6 @@ public class Foo
     }
 }
 ```
-
 # Tips
 
 * Use representative names for variables.
@@ -51,6 +50,7 @@ public class Foo
 * Separate logic blocks of code by adding extra newlines (like paragraphs).
 * Return as fast as you can.
 * Use continue to avoid unnecesary nesting ([Linus Torvalds trick](https://www.mono-project.com/community/contributing/coding-guidelines/#indentation)).
+
 
 
 # More information
