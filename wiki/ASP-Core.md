@@ -42,7 +42,7 @@ public class UsersController : ControllerBase
 
     [HttpGet]
     [ProducesResponseType(200)]
-    public async Task<ActionResult<IEnumerable<User>>> GetAll()
+    public async Task<ActionResult<IEnumerable<User>>> GetAllAsync()
     {
         return await _repository.GetAll();
     }        
@@ -50,23 +50,56 @@ public class UsersController : ControllerBase
     [HttpGet("{username}")]
     [ProducesResponseType(200)]
     [ProducesResponseType(404)]
-    public async Task<ActionResult<User>> GetById(string username)
+    public async Task<ActionResult<User>> GetByIdAsync(string username)
     {
-        var item = await _repository.GetByUsername(username);
-        if (item == null)
+        var existingUser = await _repository.GetByUsername(username);
+        if (existingUser == null)
         {
             return NotFound();
         }
-        return item;
+        return existingUser;
     }
 
     [HttpPost]
     [ProducesResponseType(201)]
     [ProducesResponseType(400)]
-    public async Task<ActionResult<User>> AddUser(User user)
+    public async Task<ActionResult<User>> CreateUserAsync(User user)
     {
         await _repository.AddUser(user);
         return CreatedAtAction(nameof(GetById), new { id = user.Username }, user);
+    }
+
+    [HttpPut("{username}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(404)]
+    public async Task<IActionResult> UpdateUserAsync(string username, User user)
+    {
+        var existingUser = await _repository.GetByUsername(username);
+        if (existingUser == null)
+        {
+            return NotFound();
+        }
+
+        existingUser.Nickname = user.Nickname;
+        existingUser.Email = user.Email;
+
+        _repository.Update(existingUser);
+        return NoContent();
+    }
+
+    [HttpDelete("{username}")]
+    [ProducesResponseType(204)]
+    [ProducesResponseType(404)]
+    public async Task<IActionResult> DeleteUserAsync(string username)
+    {
+        var existingUser = await _repository.GetByUsername(username);
+        if (existingUser == null)
+        {
+            return NotFound();
+        }
+
+        _repository.Delete(existingUser);
+        return NoContent();
     }
 }
 ```
