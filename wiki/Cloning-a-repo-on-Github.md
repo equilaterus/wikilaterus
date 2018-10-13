@@ -27,4 +27,6 @@ menu: wiki
 
 8. By clicking on the left side just in your repository name, you will open a left navbar where you can do a right click on **Repo name > Open in VSCode**.
 
+**Github Desktop Hotkeys!** Ctrl + Shift + A: Open in VS Code. Ctrl + Shift + F: Open folder in file explorer. You can see them (and more) on the top bar where it says **Repository**
+
 ![Open VSCode](https://equilaterus.github.io/wikilaterus/assets/img/clone/open-vscode.JPG)
