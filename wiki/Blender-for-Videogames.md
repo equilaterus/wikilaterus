@@ -45,6 +45,10 @@ N > GSL > Backface culling
 |i                   | Inset
 |alt+m               | Merge
 
+* **Select loose parts**
+    * Current selection [ ctrl + L ]
+    * Current pointer [ L ]
+
 * **Knife** [ K ]
     * Center [ ctrl ]  
     * Angle constraint [ C ]
@@ -55,5 +59,25 @@ N > GSL > Backface culling
         * Shade Smooth: smooth selected faces
     * Edge options [ ctrl + e ]
         * Mark sharp: "removes" smooth of an edge
-    * Select menu
-        * Sharp edges
+    
+## Smoothing
+
+* Activate auto smooth at 180º.
+
+  ![Autosmooth](https://equilaterus.github.io/wikilaterus/assets/img/blender/auto-smooth.PNG)
+
+* Select faces and use **Shade Smooth** using [ ctrl + f ]
+
+* Mark sharp required edges using option at [ ctrl + e] 
+
+## High-poly (non-destructive)
+
+* Select all and remove **marked as sharp** founded on [ ctrl + e ].
+
+* Check **Sharp edges** from select menu and configure angle until it selects the parts where you want to add polygons.
+
+  ![Select Sharp edges](https://equilaterus.github.io/wikilaterus/assets/img/blender/select-sharp-edges.PNG)  
+
+* Use **bevel modifier** with a 1.00 of weight at edges data and play with *width* and *segments* values.
+
+    ![Clone Github](https://equilaterus.github.io/wikilaterus/assets/img/blender/bevel-modifier-sharp-edges.PNG)
