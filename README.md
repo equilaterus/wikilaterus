@@ -1,4 +1,7 @@
 # Wikilaterus
+
+[![Build Status](https://travis-ci.org/equilaterus/wikilaterus.svg?branch=master)](https://travis-ci.org/equilaterus/wikilaterus) 
+
 Equilaterus' Wiki based on Jekyll minima theme.
 
 Published at: https://equilaterus.github.io/wikilaterus/
