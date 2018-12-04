@@ -38,7 +38,7 @@ menu: wiki
 |O                   | Proportional editing mode              
 |ctrl + A            | Apply
 |alt + S             | Undo scale
-|ctrl + R            | Repeat last command
+|shift + R           | Repeat last command
 |F6                  | Active tool menu
 
 ## Object mode
@@ -52,6 +52,7 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 ### General
 
 * **Transforming**
+    * Reset position [ alt + G ]
     * Move [ G ]
         * Vertex slide [ G + G]
     * Scale [ S ]
@@ -176,3 +177,32 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     * From the bottom menu activate an icon with a *mesh and a cursor*. 
         * It will **Keep UV mode and mesh selection in sync**.
         * Disable this option to edit UV parts.
+
+## Baking
+
+> Located at **Render Menu**. 
+
+* General:
+    * Apply same material to several objects [ ctrl + L]
+    * Create a new image at the UV Editor, be sure that it is active. Keep a backup of your textures.
+    * Select *Bake Mode* and disable *Clear* at the **Render Menu** before proceed.
+    * To bake from a Hi-Poly to a low-poly select Hi then Low. Check Selected to active.
+    * To improve rendering quality at **World** menu increase **Gathering** > **Samples** (even if it is disabled).
+
+* Ambient Occlusion
+    * White background image.
+
+* Normals
+    * Background image RGB: 0.5, 0.5, 1.0.
+
+* Solid color
+    * Background image HSV: 0, 0, 0.5.
+
+* Textures (last step)
+    * When you have finished with materials, baking and use this bake option to generate a unique texture with all filters applied.
+    * It works even when you create multiple UVs to add detail to certain parts of your model.
+
+ 
+
+
+
