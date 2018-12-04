@@ -63,11 +63,13 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     * **Snapping**
         * Toogle snap [ shift + tab ]
         * Snap on the fly [ ctrl ]
+    * You can change the pivot point at the bottom of the Viewport, next to *Viewport Shading*.
 
 * **Selecting**
     * **Misc**
         * Mesh select mode [ ctrl + tab]
         * All [ A + A ]
+        * Invert selection [ ctrl + i ]
         * Marker border select [ B ]
         * Marker border un-select [ B + Middle mouse ]
         * Loop [ alt + right click ]
@@ -178,6 +180,11 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
         * It will **Keep UV mode and mesh selection in sync**.
         * Disable this option to edit UV parts.
 
+* You can add multiple UVs to add more details to some parts of the model and then bake all changes on a single UV. *Texture baking*.
+
+    * At **Data** tab you can add UVs.
+    * Remove them before exporting. 
+
 ## Baking
 
 > Located at **Render Menu**. 
@@ -202,7 +209,35 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     * When you have finished with materials, baking and use this bake option to generate a unique texture with all filters applied.
     * It works even when you create multiple UVs to add detail to certain parts of your model.
 
+## Materials
+
+* Use them to previsualize your changes and also to prepare a **Texture baking** step.
+  * Create a material and add textures:
+     * For the *Normals* be sure that the affect *Geometry > Normal* and to select at *Image Sampling* **Normal Map > Tangent**.
+     * For detail textures (over textures) be sure to change the **Blending Mode** to **Multiply**.
  
+## Painting
+
+* General
+    * Brush size [ F ]
+    * Strength [ shift + F ]
+    * Stroke method [ E ]
+    * Paint: *Mix mode*.
+    * Erase: *Erase alpha mode*.
+    * Bleed: outer margin to avoid artifacts on compressed versions of the texture. [ Broken on 2.78 - 2.79c https://developer.blender.org/T50831]
+
+* Add multiple slots for each type of detail. For example:
+   * Color variation.
+   * Border details:
+        * Activate *Cavity Mask*.
+        * Add a *Subdivide modifier* with a *Simple* subdivision type. **DO NOT APPLY IT**.
+
+* Gradient:
+   * Stroke method: line.
+   * Paint on perspective mode with a FOV of 250 [ N menu ].
+
+
+
 
 
 
