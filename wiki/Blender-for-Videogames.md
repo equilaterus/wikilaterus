@@ -109,8 +109,14 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
         * Merge [ alt + m ]
 
 * **Curves**
+    Use Bezier curves to create cable-like models:
+    * *Settings*
+        * *Bezier curve data*:
+            * **Fill**: Full.
+            * **Bevel**: Custom value to set width.
+            * **Resolution**: Custom value to set detail.
     * *Edit mode*
-        * Set handle type to automatic before modeling [ v ]        
+        * *Select All* and *Set handle type to automatic* before modeling [ v ]        
     * *Object mode*
         * Convert to mesh [ alt + c ]
     
