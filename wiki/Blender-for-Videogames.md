@@ -215,6 +215,13 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     * When you have finished with materials, baking and use this bake option to generate a unique texture with all filters applied.
     * It works even when you create multiple UVs to add detail to certain parts of your model.
 
+### Baking FAQ:
+
+* "No object or images found to bake to" even with using correct settings: Be sure to enable **Use the scene's active camera and layers in this view**.
+
+  ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-no-object-images-bake.png)
+
+
 ## Materials
 
 * Use them to previsualize your changes and also to prepare a **Texture baking** step.
