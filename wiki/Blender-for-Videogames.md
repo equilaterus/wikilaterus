@@ -217,7 +217,7 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 
 ### Baking FAQ:
 
-* "No object or images found to bake to" even with using correct settings: Be sure to enable **Use the scene's active camera and layers in this view**.
+* "No object or images found to bake to" even when using right settings: Be sure to enable **Use the scene's active camera and layers in this view**.
 
   ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-no-object-images-bake.png)
 
