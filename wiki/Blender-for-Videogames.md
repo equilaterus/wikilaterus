@@ -132,13 +132,15 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 
 ## Smoothing
 
-* Activate auto smooth at 180º.
+* Activate **Auto Smooth** at 180º.
 
   ![Autosmooth](https://equilaterus.github.io/wikilaterus/assets/img/blender/auto-smooth.PNG)
 
 * Select faces and use **Shade Smooth** using [ ctrl + f ]
 
 * Mark sharp required edges using option at [ ctrl + e] 
+
+* *Note*: [Edge Split Modifier](https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/edge_split.html) can be used to achieve the same effect as **Auto Smooth**.
 
 ## High-poly (non-destructive)
 
@@ -249,8 +251,11 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
    * Stroke method: line.
    * Paint on perspective mode with a FOV of 250 [ N menu ].
 
+## Exporting
 
+* As of Blender 2.78 keep the default settings and check *Tangent Space* option in the *Geometries* tab of the FBX exporter.
 
+  ![Blender 2.78 to UE export settings](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-fbx-export-tangent.png)
 
 
 

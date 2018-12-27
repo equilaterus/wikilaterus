@@ -29,3 +29,8 @@ Naming:
 Collisions:
 * Add a custom *convex* mesh with the name **UCX_MeshName**, where *MeshName* is the exact name of the mesh that will have a collision.
 * More info and advanced scenarios: [Static Meshes Pipeline](https://docs.unrealengine.com/en-us/Engine/Content/FBX/StaticMeshes)
+
+Importing:
+* Check **Import Normals and Tangents** for a properly display of *Smooth Shaded Objects*. *UE4 will automatically show a warning when this setting is required but wasn't selected or when the FBX was generated without the Tangent Space*.
+
+  ![UE import settings](https://equilaterus.github.io/wikilaterus/assets/img/ue4/ue4-import-fbx-blender.png)
