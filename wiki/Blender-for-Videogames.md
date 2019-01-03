@@ -195,14 +195,7 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 
 ## Baking
 
-> Located at **Render Menu**. 
-
-* General:
-    * Apply same material to several objects [ ctrl + L]
-    * Create a new image at the UV Editor, be sure that it is active. Keep a backup of your textures.
-    * Select *Bake Mode* and disable *Clear* at the **Render Menu** before proceed.
-    * To bake from a Hi-Poly to a low-poly select Hi then Low. Check Selected to active.
-    * To improve rendering quality at **World** menu increase **Gathering** > **Samples** (even if it is disabled).
+> Located at **Render Menu**.
 
 * Ambient Occlusion
     * White background image.
@@ -213,9 +206,51 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 * Solid color
     * Background image HSV: 0, 0, 0.5.
 
+## Baking with Blender Internal
+
+* General:
+    * Apply same material to several objects [ ctrl + L]
+    * Create a new image at the UV Editor, be sure that it is active. Keep a backup of your textures.
+    * Select *Bake Mode* and disable *Clear* at the **Render Menu** before proceed.
+    * To bake from a Hi-Poly to a low-poly select Hi then Low. Check Selected to active.
+    * To improve rendering quality at **World** menu increase **Gathering** > **Samples** (even if it is disabled).
 * Textures (last step)
     * When you have finished with materials, baking and use this bake option to generate a unique texture with all filters applied.
     * It works even when you create multiple UVs to add detail to certain parts of your model.
+    * Join all meshes into a single one, applying modifiers and select common UV map for a succesful process.
+
+## Baking with Cycles
+
+* General:
+    * Add *Nodes* [ shift + a ]
+    * Open *Node Editor View*.
+    * Be sure to select the correct **Texture Node** when backing.
+    * Select *Bake Mode* and disable *Clear* at the **Render Menu** before proceed.
+    * To bake from a Hi-Poly to a low-poly select Hi then Low. Check Selected to active.
+    * Sampling settings:
+
+    ![Sampling settings for cycles](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-samples.png)
+
+* Normals:
+    * To bake from a Hi-Poly to a low-poly select Hi then Low. Check Selected to active.
+    * Adjust Ray Distance.
+
+    ![Baking normals on cycles](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-normals.png)
+
+* Baking multiple normals:
+    * This workarround uses color baking to consolidate multiple UVs into a single one. This procedure is to add more details to a part of the model and then optimize the size by backing everything into a single texture.
+    * Create different UV-Maps to add more detail and configure a material as here (note the unconnected node for the bake resulting texture):
+
+    ![Baking multiple normals different UVs](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-multiple-uvs.png)
+    * Add a material and apply it to the rest of the model, create a *Default Normal Texture* (RGB: 0.5, 0.5, 1.0.):
+
+    ![Baking multiple normals different Materials](https://equilaterus.github.io/wikilaterus/assets/img/blender-cycles-multiple-baking-mat.png)
+    * While selecting the unconnected *Resulting Node* (Image Texture named: NewNormal in the picture) bake *Diffuse Color*.
+
+    ![Baking color on cycles](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-baking-color.png)
+
+* Baking multiple textures:
+    * Apply the previous steps but instead of setting a Normal Texture on the color of your Difuse Shader, link your texture.
 
 ### Baking FAQ:
 
