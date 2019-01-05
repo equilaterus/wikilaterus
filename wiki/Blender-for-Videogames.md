@@ -7,6 +7,12 @@ menu: wiki
 
 > This is a WIP wikilaterus page
 
+## Recommended Blender Course!
+
+![Blender Game Asset Creation](https://cloud.blender.org/api/storage/file/eb/ebf6b6be02644a506e1d7e63825acb4a-l.jpg)
+
+You can try some free lessons but the full content is available for **Blender Cloud Subscribers**: [Open Course](https://cloud.blender.org/p/game-asset-creation/56041550044a2a00d0d7e068)
+
 ## Settings
 
 * Interface
@@ -219,6 +225,13 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     * It works even when you create multiple UVs to add detail to certain parts of your model.
     * Join all meshes into a single one, applying modifiers and select common UV map for a succesful process.
 
+### Blender Internal Materials
+
+* Use them to previsualize your changes and also to prepare a **Texture baking** step.
+  * Create a material and add textures:
+     * For the *Normals* be sure that the affect *Geometry > Normal* and to select at *Image Sampling* **Normal Map > Tangent**.
+     * For detail textures (over textures) be sure to change the **Blending Mode** to **Multiply**.
+
 ## Baking with Cycles
 
 * General:
@@ -257,14 +270,6 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 * "No object or images found to bake to" even when using right settings: Be sure to enable **Use the scene's active camera and layers in this view**.
 
   ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-no-object-images-bake.png)
-
-
-## Materials
-
-* Use them to previsualize your changes and also to prepare a **Texture baking** step.
-  * Create a material and add textures:
-     * For the *Normals* be sure that the affect *Geometry > Normal* and to select at *Image Sampling* **Normal Map > Tangent**.
-     * For detail textures (over textures) be sure to change the **Blending Mode** to **Multiply**.
  
 ## Painting
 
