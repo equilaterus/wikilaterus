@@ -302,7 +302,7 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 
 ### Texture Padding - Dilation
 
-* If you worked with **Substance Painter** be sure to enable [Infinite Padding Generation](https://support.allegorithmic.com/documentation/spdoc/padding-134643719.html) to avoid artifact when the Game Engine generates Mipmaps. 
+* If you worked with **Substance Painter** be sure to enable [Infinite Padding Generation](https://support.allegorithmic.com/documentation/spdoc/padding-134643719.html) to avoid artifacts when the Game Engine generates Mipmaps. 
 
   ![Substance Painter Infinite Padding](https://support.allegorithmic.com/documentation/spdoc/files/134643719/134643715/1/1441729899000/padding_zoom.gif)
 
