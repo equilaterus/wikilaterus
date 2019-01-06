@@ -293,8 +293,10 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
         * Add a *Subdivide modifier* with a *Simple* subdivision type. **DO NOT APPLY IT**.
 
 * Gradient:
+   * Brush: fill-
    * Stroke method: line.
-   * Paint on perspective mode with a FOV of 250 [ N menu ].
+
+* It is recommended to paint everything (specially gradients) using perspective mode with a FOV of 250 [ N menu ].
 
 ## Exporting
 
