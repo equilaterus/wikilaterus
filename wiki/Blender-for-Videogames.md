@@ -190,12 +190,15 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     * UVs menu > **Seams from Island**
     * N > Display > **Stretch** to show UV quality
     * New Image > **Color grid** to show sample UV.
-    * From the bottom menu activate an icon with a *mesh and a cursor*. 
-        * It will **Keep UV mode and mesh selection in sync**.
-        * Disable this option to edit UV parts.
+    * **Keep UV mode and mesh selection in sync** (Disable this option to edit UV parts).
 
-* You can add multiple UVs to add more details to some parts of the model and then bake all changes on a single UV. *Texture baking*.
+      ![UV Sync](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-uv-sync.png)
 
+    * **Snap to pixels** (recommended to be activated):
+
+      ![UV Sync](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-uv-snap-pixels.png)
+
+* You can add multiple UVs to add more details to some parts of the model and then bake all changes on a single UV. *See Texture baking section*.
     * At **Data** tab you can add UVs.
     * Remove them before exporting. 
 
@@ -210,7 +213,7 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     * Background image RGB: 0.5, 0.5, 1.0.
 
 * Solid color
-    * Background image HSV: 0, 0, 0.5.
+    * Background image *alpha*. **Keep alpha color for empty parts as for exporting we will use a padding algorithm on Gimp (UVPadder) to generate better textures for mipmaps generatio** (*See exporting section for more information*).
 
 ## Baking with Blender Internal
 
@@ -273,13 +276,15 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
  
 ## Painting
 
+> This workflow of Blender is partially broken. It is recommended to use it with caution (to add details and not for a complete asset painting). If you have access to **Substance Painter** it is better to use it, if not, you can *Bake base difusse colors* and use **Gimp** and/or **Krita** for texture painting. 
+
 * General
     * Brush size [ F ]
     * Strength [ shift + F ]
     * Stroke method [ E ]
     * Paint: *Mix mode*.
     * Erase: *Erase alpha mode*.
-    * Bleed: outer margin to avoid artifacts on compressed versions of the texture. [ Broken on 2.78 - 2.79c https://developer.blender.org/T50831]
+    * Bleed: outer margin to avoid artifacts on compressed versions of the texture. [Broken on 2.78 - 2.79c](https://developer.blender.org/T50831) - it is recommended to export them and use UVPadder on Gimp to fix this issue and even create better textures that will not show artifacts when mipmaps are generated on the Game Engine (*See Texture Exporting section for more details*).
 
 * Add multiple slots for each type of detail. For example:
    * Color variation.
@@ -292,6 +297,32 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
    * Paint on perspective mode with a FOV of 250 [ N menu ].
 
 ## Exporting
+
+### Textures
+
+### Texture Padding - Dilation
+
+* If you worked with **Substance Painter** be sure to enable [Infinite Padding Generation](https://support.allegorithmic.com/documentation/spdoc/padding-134643719.html) to avoid artifact when the Game Engine generates Mipmaps. 
+
+  ![Substance Painter Infinite Padding](https://support.allegorithmic.com/documentation/spdoc/files/134643719/134643715/1/1441729899000/padding_zoom.gif)
+
+  ![Substance Painter Padding comparison](https://support.allegorithmic.com/documentation/spdoc/files/134643719/134643718/1/1441729897000/padding_toggle.gif)
+
+* If you worked with open source software, there is an alternative that generates a similar effect:
+
+  * Save as an image and open it up on Gimp. Use UVPadder to fill empty spaces in the texture. 
+
+    * [UVPadder for Gimp Original Forum Post](https://polycount.com/discussion/114616/uvpadder-filter-for-gimp-2-6)
+    * [Download UVPadder](https://drive.google.com/file/d/1RCsXhOGDbCiR0eMkQT4hv1smSN6ODF9A/view) and see instructions on *readme.txt*.
+    * It works with *Windows* and *Linux*, there is the source that you can use to compile for other OS.
+
+* If the method doesn't work, you can at least fill your empty space of the texture with a *common* color to avoid highly visible artifacts. For example see this image took from the following video of *JDGameArt*:
+
+  ![UV Image empty space filled with color](https://equilaterus.github.io/wikilaterus/assets/img/blender/uv-empty-color.png)
+
+  Full video with a discussion regarding this topic: [![Mipmaps, UV Seams, & UV Padding](https://img.youtube.com/vi/GD7mlc6h4N8/0.jpg)](https://youtu.be/GD7mlc6h4N8) 
+
+### Model
 
 * As of Blender 2.78 keep the default settings and check *Tangent Space* option in the *Geometries* tab of the FBX exporter.
 
