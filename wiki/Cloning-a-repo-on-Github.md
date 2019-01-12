@@ -13,9 +13,9 @@ menu: wiki
 
 3. Download and install [Github Desktop App](https://desktop.github.com/). 
 
-  * **Note:** On **Linux**, maybe you wanna try to download it from here (https://aur.archlinux.org/packages/github-desktop/) or you also can use any git command line application (use this [guide](https://help.github.com/articles/cloning-a-repository/) and do not follow next steps from this one).
+  * **Note:** On **Linux**, maybe you wanna try to download it from here (https://aur.archlinux.org/packages/github-desktop/) or you can use any git command line application (use this [guide](https://help.github.com/articles/cloning-a-repository/) and you can avoid next steps from this guide).
 
-4. After finishing the installations, restart your machine (recommended).
+4. After finishing the installation, restart your machine (recommended).
 
 5. Login on https://github.com
 
