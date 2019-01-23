@@ -7,18 +7,9 @@
 
     {%- include header.html -%}
 
-    <main class="page-content" aria-label="Content">
-      <div class="wrapper">
+    <main id="main-container" class="margin-against-navbar-left-lg" aria-label="Content">
+      <div class="container">
         {{ content }}
-
-        <br/>
-        <ul class="post-list">
-          {% for p in site.pages %}
-            {% if p.menu == "wiki" %}
-            <li><a class="post-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
       </div>
     </main>
 
