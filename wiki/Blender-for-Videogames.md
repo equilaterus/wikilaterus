@@ -270,9 +270,19 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 
 ### Baking FAQ:
 
-* "No object or images found to bake to" even when using right settings: Be sure to enable **Use the scene's active camera and layers in this view**.
+* "No object or images found to bake to":
 
-  ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-no-object-images-bake.png)
+  * On *edit mode* selecting all the *faces* check at the *UV editor* that you've selected the correct image to bake to.
+
+    ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/bblender-bake-no-active-images-objects.png)
+
+  * Check that the objects are visible for rendering on the Hierarchy menu.
+
+    ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-no-object-images-bake.png)
+
+  * Be sure to enable **Use the scene's active camera and layers in this view**.
+
+    ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-no-object-images-bake.png)
  
 ## Painting
 
