@@ -13,7 +13,7 @@ menu: wiki
 
 ### Redux
 
-* Functional Components and Containers exmaples:
+* Functional Components and Containers examples:
 
   * **Basic**: [Functional Component](https://github.com/dacanizares/ReactJS-Redux-Examples/blob/master/todo-app/src/components/TodoList.js) - [Container](https://github.com/dacanizares/ReactJS-Redux-Examples/blob/master/todo-app/src/containers/VisibleTodoList.js) - [How to use it](https://github.com/dacanizares/ReactJS-Redux-Examples/blob/master/todo-app/src/components/App.js)
 
