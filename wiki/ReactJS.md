@@ -27,3 +27,9 @@ menu: wiki
     * [Simple API call](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/api/UsersApi.js) - [Actions](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/actions/index.js) - [Reducers](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/reducers/index.js) - [Create store](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/index.js).
     * See also *HOC extending functional component*: [Functional Component](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/components/Users.js) - [HOC](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/wrappers/withLoading.js) - [Container](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/containers/UsersContainer.js) - [How to use it](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/components/App.js)
 
+* Selectors:
+  
+  * Library [reselect](https://github.com/reduxjs/reselect)
+
+  * Using [Selectors from state and props](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors/src/selectors/index.js) and [Containers](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors/src/containers/VisibleTodoList.js)
+
