@@ -13,7 +13,7 @@
   <a class="navbar-brand" href="{{ "/" | relative_url }}">wikilaterus</a>
   <ul class="navbar-nav">
     {% for p in site.pages %}
-        {% if p.menu == "wiki" %}
+        {% if p.menu == "wiki" and p.title != "Home" %}
         <li><a class="nav-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></li>
         {% endif %}
     {% endfor %}
