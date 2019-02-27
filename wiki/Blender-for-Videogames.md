@@ -11,7 +11,7 @@ menu: wiki
 
 ![Blender Game Asset Creation](https://cloud.blender.org/api/storage/file/eb/ebf6b6be02644a506e1d7e63825acb4a-l.jpg)
 
-You can try some free lessons but the full content is available for **Blender Cloud Subscribers**: [Open Course](https://cloud.blender.org/p/game-asset-creation/56041550044a2a00d0d7e068)
+You can try some free lessons but the full content is available for **Blender Cloud Subscribers**: [See more](https://cloud.blender.org/p/game-asset-creation/56041550044a2a00d0d7e068)
 
 ## Settings
 
