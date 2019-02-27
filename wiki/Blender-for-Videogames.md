@@ -30,7 +30,7 @@ You can try some free lessons but the full content is available for **Blender Cl
 ## Hotkeys
 
 |Shorcut             |Action                                             
-| ---------:         |---------        
+| ---------:         |:---------        
 |T                   | Toolshef
 |N                   | Viewport menu
 |Tab                 | Edit / Object mode            
