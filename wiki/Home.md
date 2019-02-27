@@ -7,8 +7,6 @@ menu: wiki
 
 # Wikilaterus
 
-Welcome to the equilaterus' Wiki.
-
-Please select a topic.
+Published at: https://equilaterus.github.io/wikilaterus/
 
 
