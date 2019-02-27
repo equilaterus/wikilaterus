@@ -6,8 +6,9 @@ menu: wiki
 ---
 
 # Wikilaterus
-Welcome to the equilaterus' Wiki! A place full of collective intelligence and open source code.
 
-![wikilaterus equilaterus](https://equilaterus.github.io/assets/img/equilaterus.PNG)
+Welcome to the equilaterus' Wiki.
+
+Please select a topic.
 
 
