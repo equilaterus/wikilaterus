@@ -31,5 +31,15 @@ menu: wiki
   
   * Library [reselect](https://github.com/reduxjs/reselect)
 
-  * Using [Selectors from state and props](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors/src/selectors/index.js) and [Containers](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors/src/containers/VisibleTodoList.js)
+  * Using [Selectors from state and props](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors/src/selectors/index.js) and [Containers](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors/src/containers/VisibleTodoList.js).
+
+  * Using [Router and state selectors](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/selectors/index.js) with [Containers](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/containers/VisibleTodoList.js).
+
+* **Advanced example**:
+
+  * Configuring a [Store](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/configureStore.js) with Redux Dev Tools and auto-saving to [local storage](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/localStorage.js) and [using it](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/index.js).
+
+  * [Root component](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/components/Root.js) and [child components with access to Router](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/containers/VisibleTodoList.js) and [Selectors](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/selectors/index.js).
+
+  * [Reducer composition](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/reducers/todos.js) and [Actions](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/actions/index.js). State using *Dictionary Shape* and [Selectors](https://github.com/dacanizares/reactjs-redux-examples/blob/master/todo-app-router-selectors-advanced/src/selectors/index.js) to convert it into *Values Array*.
 
