@@ -66,7 +66,7 @@ public class UsersController : ControllerBase
     public async Task<ActionResult<User>> CreateUserAsync(User user)
     {
         await _repository.AddUser(user);
-        return CreatedAtAction(nameof(GetById), new { id = user.Username }, user);
+        return CreatedAtAction(nameof(GetById), new { username = user.Username }, user);
     }
 
     [HttpPut("{username}")]
