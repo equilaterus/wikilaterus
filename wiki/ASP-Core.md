@@ -83,7 +83,7 @@ public class UsersController : ControllerBase
         existingUser.Nickname = user.Nickname;
         existingUser.Email = user.Email;
 
-        _repository.Update(existingUser);
+        await _repository.Update(existingUser);
         return NoContent();
     }
 
@@ -98,7 +98,7 @@ public class UsersController : ControllerBase
             return NotFound();
         }
 
-        _repository.Delete(existingUser);
+        await _repository.Delete(existingUser);
         return NoContent();
     }
 }
