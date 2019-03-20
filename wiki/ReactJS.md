@@ -11,6 +11,8 @@ menu: wiki
 
 * Combining functional and snapshot testing: [Component](https://github.com/dacanizares/ReactJS-Redux-Examples/blob/master/todo-app/src/components/SingleForm.js) - [Tests](https://github.com/dacanizares/ReactJS-Redux-Examples/blob/master/todo-app/src/components/SingleForm.test.js)
 
+* Snapshot test with mocks, sample data and negative tests: [Component](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/components/Users.js) - [Tests](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/components/Users.test.js)
+
 ### Redux
 
 * Functional Components and Containers examples:
