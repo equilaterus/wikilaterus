@@ -32,7 +32,7 @@ menu: wiki
 * Thunk:
 
   * **API calling** with UI *on-loading* and *receiving* states: 
-    * [Simple API call](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/api/UsersApi.js) - [Actions](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/actions/index.js) - [Reducers](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/reducers/index.js) - [Create store](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/index.js).
+    * [Simple API call](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/api/UsersApi.js) - [Actions](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/actions/index.js) - [Reducers](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/reducers/index.js) - [Create store](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/index.js) - [Container](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/containers/UsersContainer.js).
     * See also *HOC extending functional component*: [Functional Component](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/components/Users.js) - [HOC](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/wrappers/withLoading.js) - [Container](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/containers/UsersContainer.js) - [How to use it](https://github.com/dacanizares/reactjs-redux-thunk-example/blob/master/src/components/App.js)
 
 * Redux-Forms:

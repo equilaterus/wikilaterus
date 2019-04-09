@@ -26,6 +26,49 @@ menu: wiki
 
 * Global error handling in [ASP Core](https://code-maze.com/global-error-handling-aspnetcore/)
 
+## EF Core Hotspots
+
+* Startup.cs -> Configure Services
+
+```csharp
+services.AddDbContext<MYContext>(
+    options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+    serverOptions => serverOptions.MigrationsAssembly("ASSEMBLYNAME")));
+```
+
+* appsettings.json
+
+```csharp
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=DBNAME;Trusted_Connection=True;MultipleActiveResultSets=true"
+  },
+  ...
+}
+```
+
+* DbContext:
+
+```csharp
+public class MYContext : DbContext
+{
+    public MYContext() { }
+
+    public MYContext(DbContextOptions<MYContext> options)
+            : base(options) { }
+
+    public DbSet<...> .... 
+}
+```
+
+* Testing InMemoryDatabase provider:
+
+```csharp
+new DbContextOptionsBuilder<MYContext>()
+    .UseInMemoryDatabase(databaseName: NAME)
+    .Options
+```
+
 ## ASP Core Web API Example
 
 ```csharp
