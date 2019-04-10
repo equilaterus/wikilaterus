@@ -30,44 +30,44 @@ menu: wiki
 
 * Startup.cs -> Configure Services
 
-```csharp
-services.AddDbContext<MYContext>(
-    options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-    serverOptions => serverOptions.MigrationsAssembly("ASSEMBLYNAME")));
-```
+  ```csharp
+  services.AddDbContext<MYContext>(
+      options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+      serverOptions => serverOptions.MigrationsAssembly("ASSEMBLYNAME")));
+  ```
 
 * appsettings.json
 
-```csharp
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=DBNAME;Trusted_Connection=True;MultipleActiveResultSets=true"
-  },
-  ...
-}
-```
+  ```csharp
+  {
+    "ConnectionStrings": {
+      "DefaultConnection": "Server=(localdb)\\mssqllocaldb;Database=DBNAME;Trusted_Connection=True;MultipleActiveResultSets=true"
+    },
+    ...
+  }
+  ```
 
 * DbContext:
 
-```csharp
-public class MYContext : DbContext
-{
+  ```csharp
+  public class MYContext : DbContext
+  {
     public MYContext() { }
 
     public MYContext(DbContextOptions<MYContext> options)
             : base(options) { }
 
     public DbSet<...> .... 
-}
-```
+  }
+  ```
 
 * Testing InMemoryDatabase provider:
 
-```csharp
-new DbContextOptionsBuilder<MYContext>()
+  ```csharp
+  new DbContextOptionsBuilder<MYContext>()
     .UseInMemoryDatabase(databaseName: NAME)
     .Options
-```
+  ```
 
 ## ASP Core Web API Example
 
