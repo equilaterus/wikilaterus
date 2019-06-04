@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Planning on Github
-wikiPageName: Planning-on-Github
+title: Github Planning
+wikiPageName: Github-Planning
 menu: wiki
 ---
 
