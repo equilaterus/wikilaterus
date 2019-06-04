@@ -1,7 +1,7 @@
 ---
 layout: page
-title: UE4 Content Creation
-wikiPageName: UE4-Content-Creation
+title: Videogames UE4 Content Creation
+wikiPageName: Videogames-UE4-Content-Creation
 menu: wiki
 ---
 

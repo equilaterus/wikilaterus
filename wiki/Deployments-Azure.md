@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Azure deployments
-wikiPageName: Azure-deployments
+title: Deployments Azure
+wikiPageName: Deployments-Azure
 menu: wiki
 ---
 

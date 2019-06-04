@@ -1,9 +1,11 @@
 ---
 layout: page
-title: ASP Core
-wikiPageName: ASP-Core
+title: Programming ASP Core
+wikiPageName: Programming-ASP-Core
 menu: wiki
 ---
+
+# ASP Core
 
 ## Official guides
 

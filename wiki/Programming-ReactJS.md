@@ -1,7 +1,7 @@
 ---
 layout: page
-title: ReactJS
-wikiPageName: ReactJS
+title: Programming ReactJS
+wikiPageName: Programming-ReactJS
 menu: wiki
 ---
 

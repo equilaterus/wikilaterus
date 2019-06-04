@@ -1,11 +1,11 @@
 ---
 layout: page
-title: C# coding guidelines
-wikiPageName: C#-coding-guidelines
+title: Programming C# coding guidelines
+wikiPageName: Programming-C#-coding-guidelines
 menu: wiki
 ---
 
-# General guidelines
+## General guidelines
 
 * Use PascalCase for class names.
 * Use PascalCase for public members.
@@ -13,7 +13,7 @@ menu: wiki
 * Use camelCase for params.
 * Write your code and comments in english.
 
-# Example
+## Example
 
 ```csharp
 public class Foo 
@@ -43,7 +43,8 @@ public class Foo
     }
 }
 ```
-# Tips
+
+## Tips
 
 * Use representative names for variables.
 * Use comments only when necessary, try to write readable code.
@@ -53,5 +54,5 @@ public class Foo
 
 
 
-# More information
+## More information
 For more information [see official C# coding conventions](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)

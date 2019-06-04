@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Blender for Videogames
-wikiPageName: Blender-for-Videogames
+title: Videogames Blender for game engines
+wikiPageName: Videogames-Blender-for-game-engines
 menu: wiki
 ---
 

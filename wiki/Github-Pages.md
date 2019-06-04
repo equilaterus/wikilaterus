@@ -5,6 +5,10 @@ wikiPageName: Github-Pages
 menu: wiki
 ---
 
+## What is the language that GitHub Pages uses?
+
+It uses a template language called [Liquid](https://shopify.github.io/liquid/) written in Ruby.
+
 ## Deploying a folder using Travis CI
 
 You can deploy any kind of web content to a GitHub Page using the following steps:

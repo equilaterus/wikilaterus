@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Cloning a repo on Github
-wikiPageName: Cloning-a-repo-on-Github
+title: Github Cloning a repo
+wikiPageName: Github-Cloning-a-repo
 menu: wiki
 ---
 
