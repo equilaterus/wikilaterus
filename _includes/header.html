@@ -15,11 +15,32 @@
   </a>
 
   <ul class="navbar-nav">
+    {% assign htmlContent = "" %}
+    {% assign htmlCategory = "" %}
+    {% assign prevCategory = "" %}
     {% for p in site.pages %}
-        {% if p.menu == "wiki" and p.title != "Home" %}
-        <li><a class="nav-link" href="{{ p.url | prepend: site.baseurl }}">{{ p.title }}</a></li>
+      {% if p.menu == "wiki" and p.title != "Home" %}
+        {% assign splitted = p.title | split: " " %}
+        {% assign category = splitted[0] %}
+        {% assign title = p.title | remove_first: "category"  %}
+
+        {% comment %} Generate button for the article {% endcomment %}
+        {% assign destinationUrl = p.url | prepend: site.baseurl %}
+        {% assign htmlCategory = htmlCategory | append: '<a class="dropdown-item" href="' | append: destinationUrl | append: '" data-wiki-url="' | append: p.url | append: '">' | append: p.title | append: '</a>' %}
+        
+        {% comment %} Next category ? {% endcomment %}
+        {% if prevCategory != category or forloop.last %}
+          {% assign htmlCategoryButton =  '<a class="nav-link dropdown-toggle" href="#' | append: category | append: '" id="' | append: category | append: 'Submenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' | append: category | append: '</a>' %}
+          {% assign htmlCategoryMenu = '' | append: '<div class="dropdown-menu" aria-labelledby="' | append: category | append: 'Submenu">' | append: htmlCategory | append: '</div>' %}
+
+          {% assign htmlContent =  htmlContent | append: '<li class="nav-item dropdown">' | append: htmlCategoryButton | append: htmlCategoryMenu | append: '</li>' %}
+          {% assign htmlCategory = "" %}
         {% endif %}
+        {% assign prevCategory = category %}
+      {% endif %}
     {% endfor %}
+
+    {{ htmlContent }}
   </ul>
 
   <div class="footer-content navbar-nav bg-shadow-low">
