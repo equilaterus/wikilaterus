@@ -28,7 +28,7 @@
         {% comment %} Generate button for the article {% endcomment %}
         {% assign title = p.title | remove_first: category  %}
         {% assign destinationUrl = p.url | prepend: site.baseurl %}
-        {% assign htmlCategory = htmlCategory | append: '<a class="dropdown-item" href="' | append: destinationUrl | append: '" data-wiki-url="' | append: p.url | append: '">' | append: title | append: '</a>' %}
+        {% assign htmlCategory = htmlCategory | append: '<a class="dropdown-item" href="' | append: destinationUrl | append: '">' | append: title | append: '</a>' %}
 
         {% comment %} Next category ? {% endcomment %}        
         {% if lastIteration == false %}
