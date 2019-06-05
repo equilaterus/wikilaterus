@@ -39,7 +39,7 @@
           {% assign htmlCategoryButton =  '<a class="nav-link dropdown-toggle" href="#' | append: category | append: '" id="' | append: category | append: 'Submenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' | append: category | append: '</a>' %}
           {% assign htmlCategoryMenu = '' | append: '<div class="dropdown-menu" aria-labelledby="' | append: category | append: 'Submenu">' | append: htmlCategory | append: '</div>' %}
 
-          {% assign htmlContent =  htmlContent | append: '<li class="nav-item dropdown">' | append: htmlCategoryButton | append: htmlCategoryMenu | append: '</li>' %}
+          {% assign htmlContent =  htmlContent | append: '<li class="nav-item dropdown dropdown-dark">' | append: htmlCategoryButton | append: htmlCategoryMenu | append: '</li>' %}
           {% assign htmlCategory = "" %}
         {% endif %}
       {% endif %}
