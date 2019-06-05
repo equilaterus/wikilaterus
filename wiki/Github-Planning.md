@@ -5,7 +5,7 @@ wikiPageName: Github-Planning
 menu: wiki
 ---
 
-# Overview
+## Overview
 
 Planning on Github is strange at first sight: names and artifacts seems to be confusing. In this page we will explain the structure that we follow at **equilaterus** so you can start doing **effective planning on Github**.
 
@@ -15,6 +15,7 @@ Planning on Github is strange at first sight: names and artifacts seems to be co
   * **Bug label**: An error to be fixed.  
   * **No label**: Any kind of task.
   * **Epic label**: A milestone. **Note**: In your own project, you will need to create it through **issues tab** as it isn't a default Github label.
+  * *Recommended* **Part of a milestone label**: represents an issue that is part of a milestone. Helps you identify which issues are part of an *Milestone*, so you can easily avoid to add an *Epic* and any of its internal issues into the same planning.
 
 * **Milestones**:  A milestone is a *collection of issues*, they represent a feature or set of bugs that, being finished, will generate value for the final product. *Each Milestone must have a single issue with its name, it requires to be labeled as an Epic and its description will contain a link to the Milestone url*, this allows managing milestones on the project board (you cannot include a Milestone directly on them so that's why need to create an issue representing it).
 
