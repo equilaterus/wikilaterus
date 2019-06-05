@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Deployments Azure
-wikiPageName: Deployments-Azure
+title: Deployments Azure ReactJS
+wikiPageName: Deployments-Azure-ReactJS
 menu: wiki
 ---
 
@@ -33,24 +33,3 @@ command = azure/deploy.cmd
 4. Also, create a file called *web.config* with [this content](https://gist.github.com/dacanizares/615a22aa0648ea1451dbfe2d1a3e3084).
 
 5. Your CI build is ready just Commit and Push your changes.
-
-### json-server
-
-1. Add *"engines": {"node": "^10.14.1"}* to the package.json (to see all available Node versions check *Deployment Center* logs after finishing all these steps). [See sample JSON file](https://gist.github.com/dacanizares/806d98764f599be83e5f995410248ad5)
-
-2. Create a file named *server.js* on the project's root folder with the following content:
-
-    ```javascript
-    const jsonServer = require('json-server')
-    const server = jsonServer.create()
-    const router = jsonServer.router('db.json')
-    const middlewares = jsonServer.defaults()
-
-    server.use(middlewares)
-    server.use(router)
-    server.listen(process.env.PORT, () => {
-      console.log('JSON Server is running!')
-    })
-    ```
-
-3. Your CI build is ready just Commit and Push your changes.
