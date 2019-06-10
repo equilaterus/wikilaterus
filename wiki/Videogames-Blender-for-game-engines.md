@@ -13,6 +13,12 @@ menu: wiki
 
 You can try some free lessons but the full content is available for **Blender Cloud Subscribers**: [See more](https://cloud.blender.org/p/game-asset-creation/56041550044a2a00d0d7e068)
 
+## Addons
+
+* TexTools for Blender
+  * [Official page](http://renderhjs.net/textools/blender/)
+  * [Repository](https://bitbucket.org/renderhjs/textools-blender/src/master/)
+
 ## Settings
 
 * Interface
