@@ -260,7 +260,7 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     ![Baking multiple normals different UVs](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-multiple-uvs.png)
     * Add a material and apply it to the rest of the model, create a *Default Normal Texture* (RGB: 0.5, 0.5, 1.0.):
 
-    ![Baking multiple normals different Materials](https://equilaterus.github.io/wikilaterus/assets/img/blender-cycles-multiple-baking-mat.png)
+    ![Baking multiple normals different Materials](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-multiple-baking-mat.png)
     * While selecting the unconnected *Resulting Node* (Image Texture named: NewNormal in the picture) bake *Diffuse Color*.
 
     ![Baking color on cycles](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-baking-color.png)
@@ -273,8 +273,6 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 * "No object or images found to bake to":
 
   * On *edit mode* selecting all the *faces* check at the *UV editor* that you've selected the correct image to bake to.
-
-    ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/bblender-bake-no-active-images-objects.png)
 
   * Check that the objects are visible for rendering on the Hierarchy menu.
 
