@@ -40,7 +40,7 @@ menu: wiki
 
 ### Resizing/Converting TGA to PNG
 
-* Use this CLI tool: https://github.com/shusaura85/tga2png
+* Use this CLI tool: [tga2png](https://github.com/shusaura85/tga2png)
 * Open the TGA file, if it looks completely transparent, add a 1 as a final parameter otherwise do not use it. Example:
   * *targa2png.exe transparent.tga transparent.png 1*
   * *targa2png.exe normal.tga normal.png*
