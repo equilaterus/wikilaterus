@@ -5,8 +5,6 @@ wikiPageName: Programming-ASP-Core
 menu: wiki
 ---
 
-# ASP Core
-
 ## Official guides
 
 * Build web APIs with [ASP Core 2.1](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-2.1)
