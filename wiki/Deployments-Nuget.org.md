@@ -32,5 +32,11 @@ menu: wiki
    * Deploy from branch: If needed select an specific branch to deploy.
 
 7. Go to *Export YAML* (Left menu) and copy that file into your repo root folder. Customize it if needed. For example, we provide versioning directly on the file: [Vortex/appveyor.yml](https://github.com/equilaterus/Vortex/blob/dev/appveyor.yml) 
+
+## FAQ
+
+* **LicenseUrl is deprecated for Nuget Packages**: 
+  * Update your project properties (on Visual Studio left click on your project -> Properties -> Package) and select the file with your LICENSE. 
+  * [More info](https://github.com/NuGet/Home/wiki/Packaging-License-within-the-nupkg)
   
 
