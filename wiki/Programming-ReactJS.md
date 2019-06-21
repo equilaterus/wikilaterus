@@ -61,5 +61,5 @@ menu: wiki
 
 ### FAQ
 
-* React Router changes url params but doesn't re-mount component: https://stackoverflow.com/questions/48009825/force-remounting-component-when-react-router-params-changing
+* React Router changes url params but doesn't re-mount component: [Solution](https://stackoverflow.com/questions/48009825/force-remounting-component-when-react-router-params-changing)
 
