@@ -12,6 +12,14 @@ menu: wiki
   * Tutorial VS - [ASP Core 2.1](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.1)
 * Controller action return types [ASP Core 2.1](https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1)
 
+## Vortex
+
+Write elegant and testeable solutions on C# using a Monadic Framework. ASP Core joins the functional side!
+
+* [Vortex Repository](https://github.com/equilaterus/Vortex)
+* [Sample Apps](https://github.com/equilaterus/Vortex.Samples)
+* [Official website](https://equilaterus.github.io/Vortex/) 
+
 ## Performance
 
 * A kind of - Practical intro to [Async APIs](https://www.carlrippon.com/scalable-and-performant-asp-net-core-web-apis-asynchronous-operations/)
