@@ -7,10 +7,10 @@ menu: wiki
 
 ## Official guides
 
-* Build web APIs with [ASP Core 2.1](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-2.1)
-  * Tutorial VS Code - [ASP Core 2.1](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-vsc?view=aspnetcore-2.1)
-  * Tutorial VS - [ASP Core 2.1](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-2.1)
-* Controller action return types [ASP Core 2.1](https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-2.1)
+* Build web APIs with [ASP Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-3.0)
+  * Tutorial VS Code - [ASP Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-vsc?view=aspnetcore-3.0)
+  * Tutorial VS - [ASP Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0)
+* Controller action return types [ASP Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-3.0)
 
 ## Vortex
 
