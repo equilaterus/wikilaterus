@@ -27,7 +27,7 @@ wikilaterus.LoadPostFromUrl = function(url) {
 wikilaterus.OpenMenuElement = function (prevUrl, url) {
     this.UpdateActiveMenu(prevUrl, url);    
     this.UpdateCurrentLocation(url);
-    this.LoadPostFromUrl(prevUrl, url);
+    this.LoadPostFromUrl(url);
 } 
 
 $('#sideNavbar a.dropdown-item').on('click', function(e) {
