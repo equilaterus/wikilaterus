@@ -1,14 +1,46 @@
 const wikilaterus = {};
 
-wikilaterus.OpenCurrentDropdown = function () {
-    const currentPath = window.location.pathname;
+wikilaterus.UpdateActiveMenu = function (prevUrl, url) {
+    if (prevUrl) {
+        $(`a[href$="${prevUrl}"]`).removeClass('active');
+    }
 
-    $(`a[href$="${currentPath}"]`).addClass('active');
-    $(`a[href$="${currentPath}"]`).closest('div.dropdown-menu').addClass('show');
-    $(`a[href$="${currentPath}"]`).closest('li.dropdown').addClass('show');
-    
+    $(`a[href$="${url}"]`).addClass('active');
+    $(`a[href$="${url}"]`).closest('div.dropdown-menu').addClass('show');
+    $(`a[href$="${url}"]`).closest('li.dropdown').addClass('show');    
 }
 
+wikilaterus.UpdateCurrentLocation = function (url) {
+    history.pushState({}, null, url);
+}
+
+wikilaterus.LoadPostFromUrl = function(url) {
+    $.ajax({
+        url: url
+    }).done(function(response) {
+        $('#main-content').html(
+            response.match( /<!--CONTENT_BEGIN-->(.*)<!--CONTENT_END-->/s )
+        );
+    });
+}
+
+wikilaterus.OpenMenuElement = function (prevUrl, url) {
+    this.UpdateActiveMenu(prevUrl, url);    
+    this.UpdateCurrentLocation(url);
+    this.LoadPostFromUrl(prevUrl, url);
+} 
+
+$('#sideNavbar a.dropdown-item').on('click', function(e) {
+    e.preventDefault();
+    e.stopPropagation();
+
+    const prevUrl = window.location.pathname;
+    const url = $(this).attr('href');
+    
+    wikilaterus.OpenMenuElement(prevUrl, url);    
+});
+
 $(function() {
-    wikilaterus.OpenCurrentDropdown();
+    const url = window.location.pathname;
+    wikilaterus.UpdateActiveMenu(null, url);
 });
