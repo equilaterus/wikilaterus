@@ -19,7 +19,7 @@ wikilaterus.LoadPostFromUrl = function(url) {
         url: url
     }).done(function(response) {
         $('#main-content').html(
-            response.match( /<!--CONTENT_BEGIN-->(.*)<!--CONTENT_END-->/s )
+            response.match(/<!--CONTENT_BEGIN-->(.*)<!--CONTENT_END-->/s )[0]
         );
     });
 }
