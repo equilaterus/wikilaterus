@@ -8,6 +8,9 @@ wikilaterus.UpdateActiveMenu = function (prevUrl, url) {
     $(`a[href$="${url}"]`).addClass('active');
     $(`a[href$="${url}"]`).closest('div.dropdown-menu').addClass('show');
     $(`a[href$="${url}"]`).closest('li.dropdown').addClass('show');    
+
+    // Hide menu on mobile devices
+    $('#sideNavbar').removeClass('show');
 }
 
 wikilaterus.UpdateCurrentLocation = function (url) {
