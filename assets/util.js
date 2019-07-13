@@ -12,6 +12,16 @@ wikilaterus.UpdateActiveMenu = function (prevUrl, url) {
 
     $(`a[href$="${url}"]`).addClass('active');  
 
+    // Force closing inactive menus
+    $('#sideNavbar .dropdown-toggle').each(function(){
+        const menu = $(this)
+            .parents('li.dropdown')
+            .children('.dropdown-menu');
+        if (menu.is(":visible")) {
+            $(this).dropdown('toggle');
+        }
+    });
+
     // Hide menu on mobile devices
     $('#sideNavbar').removeClass('show');
 }
