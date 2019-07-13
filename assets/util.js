@@ -11,10 +11,6 @@ wikilaterus.UpdateActiveMenu = function (prevUrl, url) {
 
     // Hide menu on mobile devices
     $('#sideNavbar').removeClass('show');
-
-    $('#sideNavbar .dropdown').each(function() {
-        $(this).closable = false;
-    });
 }
 
 wikilaterus.UpdateCurrentLocation = function (url) {
