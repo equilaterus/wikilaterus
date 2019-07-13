@@ -11,6 +11,10 @@ wikilaterus.UpdateActiveMenu = function (prevUrl, url) {
 
     // Hide menu on mobile devices
     $('#sideNavbar').removeClass('show');
+
+    $('#sideNavbar .dropdown').each(function() {
+        $(this).closable = false;
+    });
 }
 
 wikilaterus.UpdateCurrentLocation = function (url) {
@@ -41,6 +45,13 @@ $('#sideNavbar a.dropdown-item').on('click', function(e) {
     const url = $(this).attr('href');
     
     wikilaterus.OpenMenuElement(prevUrl, url);    
+});
+
+
+$('#sideNavbar .dropdown').on({
+    "hide.bs.dropdown":  function() {
+        return $(this).find(".active").length == 0; 
+    }
 });
 
 $(function() {
