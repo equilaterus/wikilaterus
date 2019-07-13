@@ -3,11 +3,14 @@ const wikilaterus = {};
 wikilaterus.UpdateActiveMenu = function (prevUrl, url) {
     if (prevUrl) {
         $(`a[href$="${prevUrl}"]`).removeClass('active');
+    } else {
+        $(`a[href$="${url}"]`)
+            .parents('li.dropdown')
+            .children('.dropdown-toggle')
+            .dropdown('toggle');
     }
 
-    $(`a[href$="${url}"]`).addClass('active');
-    $(`a[href$="${url}"]`).closest('div.dropdown-menu').addClass('show');
-    $(`a[href$="${url}"]`).closest('li.dropdown').addClass('show');    
+    $(`a[href$="${url}"]`).addClass('active');  
 
     // Hide menu on mobile devices
     $('#sideNavbar').removeClass('show');
