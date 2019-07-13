@@ -44,7 +44,7 @@ wikilaterus.OpenMenuElement = function (prevUrl, url) {
     this.UpdateActiveMenu(prevUrl, url);    
     this.UpdateCurrentLocation(url);
     this.LoadPostFromUrl(url);
-} 
+}
 
 $('#sideNavbar a.dropdown-item').on('click', function(e) {
     e.preventDefault();
@@ -52,8 +52,9 @@ $('#sideNavbar a.dropdown-item').on('click', function(e) {
 
     const prevUrl = window.location.pathname;
     const url = $(this).attr('href');
-    
-    wikilaterus.OpenMenuElement(prevUrl, url);    
+    $("html, body").scrollTop(0);
+
+    wikilaterus.OpenMenuElement(prevUrl, url);        
 });
 
 
