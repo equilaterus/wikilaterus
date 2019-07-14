@@ -1,3 +1,8 @@
+// JS Utils for wikilaterus
+
+//
+// Wikilaterus utils
+//
 const wikilaterus = {};
 
 wikilaterus.UpdateActiveMenu = function (prevUrl, url) {
@@ -46,6 +51,11 @@ wikilaterus.OpenMenuElement = function (prevUrl, url) {
     this.LoadPostFromUrl(url);
 }
 
+
+//
+// jQuery event handlers
+//
+
 $('#sideNavbar a.dropdown-item').on('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -56,7 +66,6 @@ $('#sideNavbar a.dropdown-item').on('click', function(e) {
 
     wikilaterus.OpenMenuElement(prevUrl, url);        
 });
-
 
 $('#sideNavbar .dropdown').on({
     "hide.bs.dropdown":  function() {
