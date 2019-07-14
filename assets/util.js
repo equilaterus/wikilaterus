@@ -64,6 +64,11 @@ $('#sideNavbar .dropdown').on({
     }
 });
 
+$(window).on('popstate', function() {
+    // Trigger url load
+    document.location = document.location;  
+})
+
 $(function() {
     const url = window.location.pathname;
     wikilaterus.UpdateActiveMenu(null, url);
