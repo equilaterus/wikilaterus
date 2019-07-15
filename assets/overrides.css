@@ -2,3 +2,11 @@ img {
     max-width: 100%;
     height: auto; 
 }
+
+.bg-white-100 {
+    background-color: #fcfcfc;
+}
+
+#TOC ol {
+    line-height: 1.5rem;
+}
