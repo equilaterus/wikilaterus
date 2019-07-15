@@ -33,8 +33,6 @@ wikilaterus.UpdateActiveMenu = function (prevUrl, url) {
 
 wikilaterus.ParseHeading = function(element, state, htmlTOC) {
     const elementType = element ? element.prop('nodeName').toLowerCase() : '';
-    console.log(state);
-    console.log(element);
     switch (state) {
         case '':
             if (elementType === 'h2') {
@@ -78,16 +76,24 @@ wikilaterus.ParseHeading = function(element, state, htmlTOC) {
     return [ htmlTOC, state ];
 }
 
+wikilaterus.GetTemplateTOC = function(htmlTOC) {
+    return `<div class="bg-white shadow-sm p-3">
+              <h3 class="text-center">Index</h3>
+              <ol>${htmlTOC}</ol>
+            </div>`;
+}
+
 wikilaterus.GenerateTOC = function () {
-    let htmlTOC = '<ol>';
+    let htmlTOC = '';
     let state = '';
     $('#main-content h2, #main-content h3').each(function() {
         [htmlTOC, state] = wikilaterus.ParseHeading($(this), state, htmlTOC);
     });
+    if (htmlTOC === '')
+        return '';
+
     [htmlTOC, state] = wikilaterus.ParseHeading(null, state, htmlTOC);
-    htmlTOC += '</ol>';
-    console.log(htmlTOC);
-    return htmlTOC;
+    return wikilaterus.GetTemplateTOC(htmlTOC);
 }
 
 wikilaterus.AddTOC = function () {
