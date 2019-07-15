@@ -10,3 +10,9 @@ img {
 #TOC ol {
     line-height: 1.5rem;
 }
+
+table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #383838;
+}
