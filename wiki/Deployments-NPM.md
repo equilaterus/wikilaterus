@@ -32,7 +32,7 @@ menu: wiki
    ```
 
    * For more options please review:
-     * https://docs.travis-ci.com/user/deployment/npm/
-     * https://docs.travis-ci.com/user/deployment/
+     * [Travis CI - NPM deployment](https://docs.travis-ci.com/user/deployment/npm/)
+     * [Travis CI - Deployment](https://docs.travis-ci.com/user/deployment/)
 
-   * Here is a complete example with conditional deployments and multiple types of deployments (github and npm): https://raw.githubusercontent.com/equilaterus/bootlaterus/dev/.travis.yml
+   * Here is a complete example with conditional deployments and multiple types of deployments (github and npm): [Bootlaterus deployment](https://raw.githubusercontent.com/equilaterus/bootlaterus/dev/.travis.yml)
