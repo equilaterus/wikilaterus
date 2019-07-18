@@ -77,7 +77,7 @@ wikilaterus.ParseHeading = function(element, state, htmlTOC) {
 }
 
 wikilaterus.GetTemplateTOC = function(htmlTOC) {
-    return `<div class="bg-white shadow-sm p-3">
+    return `<div class="bg-white shadow-sm p-2">
               <h3 class="text-center">Index</h3>
               <ol>${htmlTOC}</ol>
             </div>`;
