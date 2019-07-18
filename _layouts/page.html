@@ -1,14 +1,17 @@
 ---
 layout: default
 ---
-<article class="post">
-
-  <header class="post-header">
+<div class="row">
+  <div class="col-md-12">
     <h1 class="post-title">{{ page.title | escape }}</h1>
-  </header>
+  </div>
+</div>
 
-  <div class="post-content">
+<div class="row">
+  <div class="col-md-8">
     {{ content }}
   </div>
 
-</article>
+  <div class="col-md-4" id="TOC">            
+  </div>
+</div>
