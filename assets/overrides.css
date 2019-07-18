@@ -26,3 +26,11 @@ table td, table th {
     vertical-align: top;
     border-top: 1px solid #dad8d8;
 }
+
+blockquote {
+    background-color: #41a0eb !important;
+    padding: 0.25rem !important;
+    color: #fff !important;
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
