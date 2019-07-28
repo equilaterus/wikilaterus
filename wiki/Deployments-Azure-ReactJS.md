@@ -5,7 +5,9 @@ wikiPageName: Deployments-Azure-ReactJS
 menu: wiki
 ---
 
-> [VSTS vs Kudu deployments](https://github.com/projectkudu/kudu/wiki/VSTS-vs-Kudu-deployments)
+## Before start
+
+[VSTS vs Kudu deployments](https://github.com/projectkudu/kudu/wiki/VSTS-vs-Kudu-deployments)
 
 ## Kudu
 
@@ -23,10 +25,10 @@ menu: wiki
 
 2. Create a file on the *project's root folder* called .deployment with the following content:
 
-```javascript
-[config]
-command = azure/deploy.cmd
-```
+   ```javascript
+   [config]
+   command = azure/deploy.cmd
+   ```
 
 3. Create a folder called *azure* and create a filed called *deploy.cmd* with [this content](https://gist.github.com/dacanizares/030a642323b34ac82ea2f20a34f8cd33).
 
