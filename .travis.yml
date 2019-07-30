@@ -4,7 +4,7 @@ sudo: false
 rvm: 2.5.1
 
 install: 
-  - gem install bundler
+  - gem i bundler -v 2.0.2
   - bundle install
 script:
   - bundle exec jekyll build
