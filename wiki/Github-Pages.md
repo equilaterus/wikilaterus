@@ -22,7 +22,7 @@ You can deploy any kind of web content to a GitHub Page using the following step
     travis encrypt GH_TOKEN="github-token" --add
     ```
 
-    In order to use **gem** you'll need to install [Ruby](https://www.ruby-lang.org/en/downloads/). For more info you can check the section *Permission to push* on [this article](https://iamstarkov.com/deploy-gh-pages-from-travis/)
+    In order to use **gem** you'll need to install [Ruby](https://www.ruby-lang.org/en/downloads/), for Windows install **rubyinstaller-devkit-2.5.5-1-x64**, when prompt for installing MSYS use option 1. For more info you can check the section *Permission to push* on [this article](https://iamstarkov.com/deploy-gh-pages-from-travis/)
 
 
 4. Create a **.travis.yml** file on your repo and customize it:
