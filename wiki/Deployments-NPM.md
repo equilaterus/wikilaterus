@@ -20,6 +20,8 @@ menu: wiki
    travis encrypt NPM_TOKEN="{PASTE_YOUR_TOKEN_HERE}" --add
    ```
 
+   **IMPORTANT!** If you're using travis-ci.com (not .org), you'll need [to login before encrypting the token](https://docs.travis-ci.com/user/encryption-keys/#usage).
+
    In order to use gem you'll need to install [Ruby](https://www.ruby-lang.org/en/). This step will create a section *env* > *global* on your **.travis.yml** file (or even a completely new file if you didn't have one).
 
 5. You'll need to update **.travis.yml** to deploy into **npm**. For example:
