@@ -77,6 +77,15 @@ Write elegant and testeable solutions on C# using a Monadic Framework. ASP Core 
     .Options
   ```
 
+## AutoMapper DI
+
+[AutoMapper Extensions for Microsoft DI](https://github.com/AutoMapper/AutoMapper.Extensions.Microsoft.DependencyInjection).
+
+```csharp
+// Add this line to your startup.cs
+services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+```
+
 ## ASP Core Web API Example
 
 ```csharp
