@@ -5,7 +5,9 @@ wikiPageName: Deployments-Azure-json-server
 menu: wiki
 ---
 
-> [VSTS vs Kudu deployments](https://github.com/projectkudu/kudu/wiki/VSTS-vs-Kudu-deployments)
+## Before start
+
+[VSTS vs Kudu deployments](https://github.com/projectkudu/kudu/wiki/VSTS-vs-Kudu-deployments)
 
 ## Kudu
 
