@@ -1,18 +1,12 @@
-<nav class="navbar sticky-top navbar-side-replacer-lg navbar-dark bg-dark-alpha-low">
-  <a class="navbar-brand" href="{{ "/" | relative_url }}">
-    <img class="img-fluid" src="https://equilaterus.github.io/wikilaterus/assets/img/logo-windmill-alpha-sm.png" alt="logo equilaterus"> <span>wikilaterus</span>
-  </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideNavbar" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-side navbar-side-left navbar-side-lg navbar-dark bg-dark-alpha-2 collapse" id="sideNavbar">
+  <div class="navbar-brand-container bg-dark-alpha-1">
+    <a class="navbar-brand" href="{{ "/" | relative_url }}">
+      <img class="img-fluid" style="max-height: 30px" src="https://equilaterus.github.io/wikilaterus/assets/img/logo-windmill-alpha-sm.png" alt="logo equilaterus"> <span>wikilaterus</span>
+    </a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideNavbar" aria-controls="sideNavbar" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-</nav>
-
-<nav class="navbar  navbar-side navbar-side-left navbar-side-expand-lg navbar-dark bg-dark-alpha-med collapse" id="sideNavbar">
-  
-  <a class="navbar-brand d-none d-lg-flex d-xl-flex bg-shadow-hi" href="{{ "/" | relative_url }}">
-    <img class="img-fluid" src="https://equilaterus.github.io/wikilaterus/assets/img/logo-windmill-alpha-sm.png" alt="logo equilaterus"> <span>wikilaterus</span>
-  </a>
 
   <ul class="navbar-nav">
     {% assign htmlContent = "" %}
@@ -49,6 +43,6 @@
   </ul>
 
   <div class="footer-content navbar-nav bg-shadow-low">
-    <a class="nav-link" href="https://equilaterus.github.io/" target="_blank">equilaterus 2019</a>
+    <a class="nav-link" href="https://equilaterus.github.io/" target="_blank">Equilaterus 2019</a>
   </div>
 </nav>
