@@ -9,23 +9,45 @@ menu: wiki
 
 It uses a template language called [Liquid](https://shopify.github.io/liquid/) written in Ruby.
 
+## Install Ruby
+
+To install Ruby [follow this link](https://www.ruby-lang.org/en/downloads/) and install *v2.6.5* or latest. For Windows install **rubyinstaller-devkit-{VERSION}-x64**, when prompt for installing MSYS use option 1. For any other OS see the website instructions.
+
+## Testing a site locally
+
+* Install Ruby!
+
+* Run the following commands to install the site:
+
+  ```
+  gem install bundler
+  bundle install
+  ```
+
+* Run this command to start the server:
+
+  ```
+  bundle exec jekyll serve
+  ```
+
 ## Deploying a folder using Travis CI
 
 You can deploy any kind of web content to a GitHub Page using the following steps:
 
-1. Create a Travis CI account and link your repo.
-2. Using an account with permissions to write in the repo create a GitHub Access Token https://github.com/settings/tokens
-3. Encrypt your token using locally on your machine the following commands:
+1. Install Ruby!
+2. Create a Travis CI account and link your repo.
+3. Using an account with permissions to write in the repo create a GitHub Access Token https://github.com/settings/tokens
+4. Encrypt your token using locally on your machine the following commands:
 
     ```
     gem install travis
     travis encrypt GH_TOKEN="github-token" --add
     ```
 
-    In order to use **gem** you'll need to install [Ruby](https://www.ruby-lang.org/en/downloads/), for Windows install **rubyinstaller-devkit-2.5.5-1-x64**, when prompt for installing MSYS use option 1. For more info you can check the section *Permission to push* on [this article](https://iamstarkov.com/deploy-gh-pages-from-travis/)
+    For more info you can check the section *Permission to push* on [this article](https://iamstarkov.com/deploy-gh-pages-from-travis/)
 
 
-4. Create a **.travis.yml** file on your repo and customize it:
+5. Create a **.travis.yml** file on your repo and customize it:
 
     * Travis CI - GitHub Pages docs: https://docs.travis-ci.com/user/deployment/pages/
     * Example to build using grunt and then deploy to GitHub Pages when a push is made to the master branch: https://github.com/equilaterus/bootlaterus/blob/dev/.travis.yml
