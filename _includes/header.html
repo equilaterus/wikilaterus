@@ -1,7 +1,12 @@
-<nav class="navbar navbar-side navbar-side-left navbar-side-lg navbar-dark bg-dark-alpha-2 collapse" id="sideNavbar">
+<div class="background background-fixed-full" style="background-image: url(https://images.unsplash.com/photo-1446776877081-d282a0f896e2?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=a34debf85fb97a6cf279d0b5f661bb1e&amp;auto=format&amp;fit=crop&amp;w=1352&amp;q=80);">  
+  <div class="vh-100 bg-cf-indigo-teal"></div>
+</div>
+
+
+<nav class="navbar navbar-side navbar-side-left navbar-side-lg navbar-dark bg-dark-alpha-2 collapse h-font" id="sideNavbar">
   <div class="navbar-brand-container bg-dark-alpha-1">
     <a class="navbar-brand" href="{{ "/" | relative_url }}">
-      <img class="img-fluid" style="max-height: 30px" src="https://equilaterus.github.io/wikilaterus/assets/img/logo-windmill-alpha-sm.png" alt="logo equilaterus"> <span>wikilaterus</span>
+      <img class="img-fluid position-absolute" style="max-height: 30px;" src="https://equilaterus.github.io/wikilaterus/assets/img/logo-windmill-alpha-sm.png" alt="logo equilaterus"> <span style="margin-left: 35px;">wikilaterus</span>
     </a>
   </div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideNavbar" aria-controls="sideNavbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,7 +36,7 @@
         {% endif %}
         {% if lastIteration == true or category != nextCategory %}
           {% assign htmlCategoryButton =  '<a class="nav-link dropdown-toggle" href="#' | append: category | append: '" id="' | append: category | append: 'Submenu" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">' | append: category | append: '</a>' %}
-          {% assign htmlCategoryMenu = '' | append: '<div class="dropdown-menu" aria-labelledby="' | append: category | append: 'Submenu">' | append: htmlCategory | append: '</div>' %}
+          {% assign htmlCategoryMenu = '' | append: '<div class="dropdown-menu bg-dark-alpha-1" aria-labelledby="' | append: category | append: 'Submenu">' | append: htmlCategory | append: '</div>' %}
 
           {% assign htmlContent =  htmlContent | append: '<li class="nav-item dropdown dropdown-dark">' | append: htmlCategoryButton | append: htmlCategoryMenu | append: '</li>' %}
           {% assign htmlCategory = "" %}

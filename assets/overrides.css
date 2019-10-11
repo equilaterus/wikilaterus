@@ -34,3 +34,7 @@ blockquote {
     font-size: 1.25rem;
     margin-bottom: 1rem;
 }
+
+.full-vh {
+    height: calc(100vh - 6rem);
+}
