@@ -1,3 +1,0 @@
-cd..
-rake wikibuild
-pause
