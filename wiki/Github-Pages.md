@@ -5,13 +5,40 @@ wikiPageName: Github-Pages
 menu: wiki
 ---
 
-## What is the language that GitHub Pages uses?
+## Bootstrap integration
 
-It uses a template language called [Liquid](https://shopify.github.io/liquid/) written in Ruby.
+We have a project to easily integrate any Bootstrap theme with your GitHub Pages website. Check [bootlaterus.gh-pages](https://github.com/equilaterus/bootlaterus.gh-pages).
 
 ## Install Ruby
 
-To install Ruby [follow this link](https://www.ruby-lang.org/en/downloads/) and install *v2.6.5* or latest. For Windows install **rubyinstaller-devkit-{VERSION}-x64**, when prompt for installing MSYS use option 1. For any other OS see the website instructions.
+
+### Windows Instructions
+
+1. To install Ruby [following this link](https://rubyinstaller.org/downloads/).
+2. Select version *2.6.5* or latest **with devkit**.
+3. When prompt for installing MSYS use option 1. 
+
+### Linux / MacOS
+
+1. Install Homebrew ([Linux](https://docs.brew.sh/Homebrew-on-Linux) / [MacOS](https://brew.sh/)) 
+2. Install Ruby using these commands:
+
+   ```
+   brew install rbenv ruby-build
+
+   # Add rbenv to bash so that it loads every time you open a terminal
+   echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
+   source ~/.bash_profile
+
+   # Install Ruby
+   rbenv install 2.6.5
+   rbenv global 2.6.5
+   ruby -v
+
+   ```
+
+**More info:** Follow [this link](https://gorails.com/setup/osx/10.14-mojave)
+
 
 ## Testing a site locally
 
@@ -66,4 +93,7 @@ bundle install
 
 * My repo says that I have a vulnerability: 
   * *Update nokogiri to version >= 1.8.5* [CVE-2018-14404](https://nvd.nist.gov/vuln/detail/CVE-2018-14404?fbclid=IwAR0FPQ8JNTYA0G0I0kYIyafCk0eh4uX4GMb-kVDz7bVKL1rEL8IcAi4r6u8) 
-    * **FIX**: Update github-pages gem.
+    * **FIX**: Update github-
+
+* What is the language that GitHub Pages uses?
+  * It uses a template language called [Liquid](https://shopify.github.io/liquid/) written in Ruby.
