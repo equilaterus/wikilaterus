@@ -5,6 +5,23 @@ wikiPageName: Programming-Powershell
 menu: wiki
 ---
 
+## Installation
+
+For more additional info please check [PowerShell GitHub Repo](https://github.com/PowerShell/PowerShell).
+
+### Windows
+
+Probably you have it already installed. Just open a PowerShell Prompt (not CMD). Anyway, it is recommended to download and install [PowerShell Core](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-6#installing-the-msi-package) so you're using the latest version.
+
+### Linux 
+
+Follow [these instructions](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6) and start it typing **pwsh** or **sudo pwsh** on bash (use the second one to start PowerShell with Root privileges).
+
+### Mac
+
+Follow [these instructions](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6) and start it typing **pwsh** or **sudo pwsh** on bash (use the second one to start PowerShell with Root privileges).
+
+
 ## Equilaterus CLI-Tools
 
 We've created a set of scripts to make easier your life: [See GitHub Repo](https://github.com/equilaterus/cli-tools-powershell).
