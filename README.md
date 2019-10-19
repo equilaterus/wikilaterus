@@ -18,7 +18,7 @@ Published at: https://equilaterus.github.io/wikilaterus/
 
     * **wiki-sync**: to sync the [wiki](https://github.com/equilaterus/wikilaterus/wiki) with the [githubpages](https://equilaterus.github.io/wikilaterus/) that is deployed through this repo.
 
-    * **wiki-add** and **win-wiki-build**: they're as example to create your own repo synced with a wiki. Run them once just follow the instructions and you'll get a configuration like the one on this repo. 
+    * **wiki-add** and **wiki-build**: they're as example to create your own repo synced with a wiki. Run them once just follow the instructions and you'll get a configuration like the one on this repo. 
 
 ## Wiki to Github Page Plugin
 
