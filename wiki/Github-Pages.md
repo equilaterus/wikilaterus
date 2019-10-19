@@ -9,40 +9,9 @@ menu: wiki
 
 We have a project to easily integrate any Bootstrap theme with your GitHub Pages website. Check [bootlaterus.gh-pages](https://github.com/equilaterus/bootlaterus.gh-pages).
 
-## Install Ruby
-
-
-### Windows Instructions
-
-1. To install Ruby [following this link](https://rubyinstaller.org/downloads/).
-2. Select version *2.6.5* or latest **with devkit**.
-3. When prompt for installing MSYS use option 1. 
-
-### Linux / MacOS
-
-1. Install Homebrew ([Linux](https://docs.brew.sh/Homebrew-on-Linux) / [MacOS](https://brew.sh/)) 
-2. Install Ruby using these commands:
-
-   ```
-   brew install rbenv ruby-build
-
-   # Add rbenv to bash so that it loads every time you open a terminal
-   echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.bash_profile
-   source ~/.bash_profile
-
-   # Install Ruby
-   rbenv install 2.6.5
-   rbenv global 2.6.5
-   ruby -v
-
-   ```
-
-**More info:** Follow [this link](https://gorails.com/setup/osx/10.14-mojave)
-
-
 ## Testing a site locally
 
-* Install Ruby!
+* [Install Ruby](https://equilaterus.github.io/wikilaterus/wiki/Programming-Ruby.html#install-ruby)
 
 * Run the following commands to install the site:
 
@@ -77,7 +46,7 @@ You can deploy any kind of web content to a GitHub Page using the following step
 5. Create a **.travis.yml** file on your repo and customize it:
 
     * Travis CI - GitHub Pages docs: https://docs.travis-ci.com/user/deployment/pages/
-    * Example to build using grunt and then deploy to GitHub Pages when a push is made to the master branch: https://github.com/equilaterus/bootlaterus/blob/dev/.travis.yml
+    * Example to build using grunt and then deploy to GitHub Pages when a push is made to the master branch: [open example](https://github.com/equilaterus/bootlaterus/blob/dev/.travis.yml)
 
 
 ## Updating Github Pages gem
@@ -93,7 +62,7 @@ bundle install
 
 * My repo says that I have a vulnerability: 
   * *Update nokogiri to version >= 1.8.5* [CVE-2018-14404](https://nvd.nist.gov/vuln/detail/CVE-2018-14404?fbclid=IwAR0FPQ8JNTYA0G0I0kYIyafCk0eh4uX4GMb-kVDz7bVKL1rEL8IcAi4r6u8) 
-    * **FIX**: Update github-
+    * **FIX**: Update github.
 
 * What is the language that GitHub Pages uses?
   * It uses a template language called [Liquid](https://shopify.github.io/liquid/) written in Ruby.
