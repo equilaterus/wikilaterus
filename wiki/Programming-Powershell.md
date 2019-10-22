@@ -7,7 +7,7 @@ menu: wiki
 
 ## Installation
 
-For more additional info please check [PowerShell GitHub Repo](https://github.com/PowerShell/PowerShell).
+For additional info please check [PowerShell GitHub Repo](https://github.com/PowerShell/PowerShell).
 
 ### Windows
 
