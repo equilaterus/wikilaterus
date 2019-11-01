@@ -5,10 +5,6 @@ wikiPageName: Programming-Identity-Server
 menu: wiki
 ---
 
-## Configuration sample
-
-...
-
 ## Quickstarts for an SPA
 
 Here is a summary of guides to look when implementing an SPA. For MVC it [is easier](http://docs.identityserver.io/en/latest/quickstarts/2_interactive_aspnetcore.html).
