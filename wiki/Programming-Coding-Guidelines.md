@@ -1,11 +1,19 @@
 ---
 layout: page
-title: Programming C# coding guidelines
-wikiPageName: Programming-C#-coding-guidelines
+title: Programming Coding Guidelines
+wikiPageName: Programming-Coding-Guidelines
 menu: wiki
 ---
 
 ## General guidelines
+
+* Use representative names for variables.
+* Use comments only when necessary, try to write readable code.
+* Separate logic blocks of code by adding extra newlines (like paragraphs).
+* Return as fast as you can.
+* Use continue to avoid unnecesary nesting ([Linus Torvalds trick](https://www.mono-project.com/community/contributing/coding-guidelines/#indentation)).
+
+## C# guidelines
 
 * Use PascalCase for class names.
 * Use PascalCase for public members.
@@ -13,7 +21,7 @@ menu: wiki
 * Use camelCase for params.
 * Write your code and comments in english.
 
-## Example
+### Sample code
 
 ```csharp
 public class Foo 
@@ -44,15 +52,6 @@ public class Foo
 }
 ```
 
-## Tips
+### More information
 
-* Use representative names for variables.
-* Use comments only when necessary, try to write readable code.
-* Separate logic blocks of code by adding extra newlines (like paragraphs).
-* Return as fast as you can.
-* Use continue to avoid unnecesary nesting ([Linus Torvalds trick](https://www.mono-project.com/community/contributing/coding-guidelines/#indentation)).
-
-
-
-## More information
 For more information [see official C# coding conventions](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/inside-a-program/coding-conventions)
