@@ -174,7 +174,7 @@ Transformations work mostly as edit mode (*see below*). **Always apply rotation 
   * 2.7: Object data tab > Normals:
     ![Autosmooth](https://equilaterus.github.io/wikilaterus/assets/img/blender/auto-smooth.PNG)
   * 2.8: Right menu under Object Menu (top left menu with Object Mode open) then go to **Object > Normals**.
-    ![Autosmooth Blender 2.8](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-autosmooth.PNG)
+    ![Autosmooth Blender 2.8](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-autosmooth.png)
     
 
 * Select faces and use **Shade Smooth** using [ ctrl + F ]
