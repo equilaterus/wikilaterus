@@ -239,23 +239,23 @@ Transformations work mostly as edit mode (*see below*). **Always apply rotation 
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GD7mlc6h4N8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 
-### Model
+### Models
 
 * For both Blender 2.8 or 2.7, keep the default settings and check *Tangent Space* option in the *Geometries* tab of the FBX exporter.
 
   ![Blender to UE export settings](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-fbx-export-tangent.png)
 
-### Exporting animations and Rigs:
+### Animations and Rigs:
 
 Please refer to this tools:
 
-#### Mr. Manequinns Tools
+##### Mr. Manequinns Tools
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UCESgYBphLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 [Project page](https://gumroad.com/l/MrMannequinsTools)
 
-### Mixamo
+#### Mixamo
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0N4gtmDANKo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
@@ -264,7 +264,7 @@ Please refer to this tools:
 You may want to check [this tool](https://www.unrealengine.com/marketplace/en-US/product/mixamo-animation-retargeting) to enable Auto Retargeting, so your Mixamo Characters are compatible with UE4 Skeletons.
 
 
-### Auto Rig Pro (PAID)
+#### Auto Rig Pro (PAID)
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jyXxI4Mw05E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
