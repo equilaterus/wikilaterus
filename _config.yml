@@ -2,7 +2,7 @@ theme: minima
 title: Wikilaterus
 description: Equilaterus' wiki
 repository: equilaterus/wikilaterus
-
+enable_gtag: true
 ##
 # Parameters for WikiToJekyll
 # Used by Rake:wikisub, Rake:wiki and wikiLinks generator plugin
