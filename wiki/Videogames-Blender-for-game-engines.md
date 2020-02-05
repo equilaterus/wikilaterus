@@ -5,21 +5,18 @@ wikiPageName: Videogames-Blender-for-game-engines
 menu: wiki
 ---
 
-> This is a WIP wikilaterus page
-
-## Recommended Blender Course!
-
-![Blender Game Asset Creation](https://cloud.blender.org/api/storage/file/eb/ebf6b6be02644a506e1d7e63825acb4a-l.jpg)
-
-You can try some free lessons but the full content is available for **Blender Cloud Subscribers**: [See more](https://cloud.blender.org/p/game-asset-creation/56041550044a2a00d0d7e068)
+> Blender 2.8 tested!
 
 ## Addons
 
 * TexTools for Blender
   * [Official page](http://renderhjs.net/textools/blender/)
   * [Repository](https://bitbucket.org/renderhjs/textools-blender/src/master/)
+  * [Blender 2.8 Port](https://github.com/SavMartin/TexTools-Blender)
 
-## Settings
+## Recommended settings
+
+### Settings for Blender 2.7x
 
 * Interface
     * View manipulation > **Auto depth**: turn on for a better navigation between closer and far objects.
@@ -33,29 +30,35 @@ You can try some free lessons but the full content is available for **Blender Cl
         * GSL > **Backface culling** to show only visible faces (not as if always they were are double-sided).
         * **Texture solid** to display texture models in solid mode.
 
-## Hotkeys
+## General Hotkeys
 
-|Shorcut             |Action                                             
-| ---------:         |:---------        
-|T                   | Toolshef
-|N                   | Viewport menu
-|Tab                 | Edit / Object mode            
-|Home                | View all objects                                  
-|.                   | Focus selected object                             
-|shift + F           | Pilot view mode                                   
-|ctrl + alt + Q      | 4 view screen (top, front, right, perspective)    
-|shift + S           | Snap 3D cursor / Selection
-|Z                   | Display mode solid                                
-|alt + Z             | Display mode textured                           
-|O                   | Proportional editing mode              
-|ctrl + A            | Apply
-|alt + S             | Undo scale
-|shift + R           | Repeat last command
-|F6                  | Active tool menu
+|Action                                               |2.8                 | 2.7            
+|:---------                                           | -------------------|--------------  
+| Tool Shelf                                          | **T**              | T              
+| Tool Shelf window                                   | **Shift + Space**  |                
+| Expand current Viewport                             | **Ctrl + Space**   |                
+| Sidenavbar (AKA Viewport menu)                      | **N**              | N              
+| Edit / Object mode                                  | **Tab**            | Tab            
+| View all objects                                    | **Home**           | Home             
+| Focus selected object                               | **Numpad .**       | .              
+| Focus and hide everything else                      | **/**              |                           
+| Pilot view mode                                     | **Shift + `**      | Shift + F        
+| 4 view screen (top, front, right, perspective)      | **Ctrl + Alt + Q** | Ctrl + Alt + Q   
+| Snap 3D cursor / Selection                          | **Shift + S**      | Shift + S      
+| Display mode                                        | **Z**              |                
+| Display mode solid                                  |                    | Z                
+| Display mode textured                               |                    | Alt + Z        
+| Proportional editing mode                           | **O**              | O              
+| Apply                                               | **Ctrl + A**       | Ctrl + A       
+| Clear / Undo scale                                  | **Alt + S**        | Alt + S        
+| Repeat last command                                 | **Shift + R**      | Shift + R      
+| Add                                                 | **Shift + A**      | Shift + A      
+| Active tool menu                                    |                    | F6             
+| Quick Access Menu                                   | **Q**              |                
 
 ## Object mode
 
-Transformations work mostly as edit mode. **Always apply rotation and scale** [ ctrl + A ] before animating or exporting.
+Transformations work mostly as edit mode (*see below*). **Always apply rotation and scale** [ ctrl + A ] before animating or exporting.
 
 ## Edit mode
 
@@ -68,28 +71,35 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
     * Move [ G ]
         * Vertex slide [ G + G]
     * Scale [ S ]
-    * Rotate [ R ]
+    * Rotate [ R ] 
+        * *2.8*: Press again for toggling pivot between local and 3D Cursor.
     * Options
         * Select transformation axis [ X, Y or Z ]
         * Lock transformation axis [ shift + (X, Y or Z)]
     * **Snapping**
         * Toogle snap [ shift + tab ]
         * Snap on the fly [ ctrl ]
-    * You can change the pivot point at the bottom of the Viewport, next to *Viewport Shading*.
+    * **2.8** sets the pivot point as your 3D by default. On **2.7** you can change the pivot point at the bottom of the Viewport, next to *Viewport Shading*.
 
 * **Selecting**
+    * **Box** [B] 
+        * Un-select [ B + Middle mouse ]
+    * **Circle*** [C] 
+        * Un-select [ C + Middle mouse ]
     * **Misc**
-        * Mesh select mode [ ctrl + tab]
+        * Mesh select mode
+          * 2.8: [ 1, 2 or 3]
+          * 2.7: [ ctrl + tab]
         * All [ A + A ]
         * Invert selection [ ctrl + i ]
-        * Marker border select [ B ]
-        * Marker border un-select [ B + Middle mouse ]
         * Loop [ alt + right click ]
-        * Ring loop [ ctrl + alt + right click ]
+        * Ring loop 
+          * 2.8: [ ctrl + alt + right click ]
+          * 2.7: [ ctrl + alt + click ]
         * Select similar [ shift + G ]
     * **Loose parts**
         * Current selection [ ctrl + L ]
-        * Current pointer [ L ]
+        * Current mouse pointing location [ L ]
 
 ### Modeling
 
@@ -104,11 +114,22 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 
 * **Cutting - Adding extra elements**
     * **General**
-        * Subdivide [ W > subdivide]
+        * Subdivide 
+          * 2.7: [ W > subdivide]
+          * 2.8: On the edit menu (top left - on edit mode) click on **Edge** > **Subdivide**.
+            ![Blender edit menu](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-editmenu.png) 
         * Add ring loop [ ctrl + R ]
+        * **Face menu** [ ctrl + F]
+        * **Edge menu** [ ctrl + E]
+        * **Vertex menu** [ ctrl + V]
         * Add face [ F ]
         * Add faces and edges between vertex [ J ]        
-        * Generate center vertex and faces [ alt + P ]
+        * Generate center vertex and faces
+          * 2.7: [ alt + P ]
+          * 2.8:
+            * [control + F] > Poke Faces.
+            * On the edit menu (top left - on edit mode) click on **Face** > **Poke faces**.
+              ![Blender edit menu](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-editmenu.png) 
     * **Knife** [ K ]
         * Center [ ctrl ]  
         * Angle constraint [ C ]
@@ -127,10 +148,14 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
             * **Fill**: Full.
             * **Bevel**: Custom value to set width.
             * **Resolution**: Custom value to set detail.
+        * On 2.8 you'll find Bezier Curve settings under the right-side main menu in *Object Data Properties* (a green icon):
+          ![Blender Bezier Curve Settings](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-beziercurve.png) 
     * *Edit mode*
         * *Select All* and *Set handle type to automatic* before modeling [ v ]        
     * *Object mode*
-        * Convert to mesh [ alt + c ]
+        * 2.7: Convert to mesh [ alt + c ]
+        * 2.8: Convert to mesh by going to the Object Menu (top left menu with Object Mode open) then go to **Object > Convert to mesh from Curve...**.
+          ![Blender Convert Bezier Curve to mesh](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-objectmenu.png)
     
 ### Additional
 
@@ -146,11 +171,15 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 
 * Activate **Auto Smooth** at 180º.
 
-  ![Autosmooth](https://equilaterus.github.io/wikilaterus/assets/img/blender/auto-smooth.PNG)
+  * 2.7: Object data tab > Normals:
+    ![Autosmooth](https://equilaterus.github.io/wikilaterus/assets/img/blender/auto-smooth.PNG)
+  * 2.8: Right menu under Object Menu (top left menu with Object Mode open) then go to **Object > Normals**.
+    ![Autosmooth Blender 2.8](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-autosmooth.PNG)
+    
 
-* Select faces and use **Shade Smooth** using [ ctrl + f ]
+* Select faces and use **Shade Smooth** using [ ctrl + F ]
 
-* Mark sharp required edges using option at [ ctrl + e] 
+* Mark sharp required edges using option at [ ctrl + E ] 
 
 * *Note*: [Edge Split Modifier](https://docs.blender.org/manual/en/latest/modeling/modifiers/generate/edge_split.html) can be used to achieve the same effect as **Auto Smooth**.
 
@@ -165,152 +194,19 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
         ![Select Sharp edges](https://equilaterus.github.io/wikilaterus/assets/img/blender/select-sharp-edges.PNG)  
 
 * Use **bevel modifier** with a 1.00 of weight at edges data and play with *width* and *segments* values.
-
-    ![Bevel modifier](https://equilaterus.github.io/wikilaterus/assets/img/blender/bevel-modifier-sharp-edges.PNG)
-
+  
+  * 2.7:
+      ![Bevel modifier sample Blender 2.7](https://equilaterus.github.io/wikilaterus/assets/img/blender/bevel-modifier-sharp-edges.PNG)
+  * 2.8:
+      ![Bevel modifier sample Blender 2.8](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-bevel-modifier-sharp-edges.png)
+    
 ## Removing n-gons
 
 * Selecting **n-gons**
-    * Select menu > Select all by trait > Select faces by side
+    * Select menu > Select all by trait > Select faces by sides
 * Removing them
     * Add faces and edges between vertex [ j ]
     * Generate center vertex and faces [ alt + p ]
-
-## UV-Unwrap
-
-* Unwrap menu [ U ]
-    * Stitch Islands [ V ]
-        * Interchange Island [ i ]
-    * Weld align [ W ]
-    * Unwrap on the UV Editor view [ E ]
-* View multiple objects
-    * Select other objects (be sure that each of them have all vertex selected on the UV Editor) and lastly the object that you're editing.
-    * On the *View* menu enable **Draw other objects**.
-* Unwrap using same size for each part:
-    ![Unwrap following quads](https://equilaterus.github.io/wikilaterus/assets/img/blender/unwrap-follow-quads.PNG)
-
-    * [ U ] and select Following Quads.
-    * If it fails [ U ] -> Reset 
-
-* Misc from UV Editor
-    * UVs menu > **Seams from Island**
-    * N > Display > **Stretch** to show UV quality
-    * New Image > **Color grid** to show sample UV.
-    * **Keep UV mode and mesh selection in sync** (Disable this option to edit UV parts).
-
-      ![UV Sync](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-uv-sync.png)
-
-    * **Snap to pixels** (recommended to be activated):
-
-      ![UV Sync](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-uv-snap-pixels.png)
-
-* You can add multiple UVs to add more details to some parts of the model and then bake all changes on a single UV. *See Texture baking section*.
-    * At **Data** tab you can add UVs.
-    * Remove them before exporting. 
-
-## Baking
-
-> Located at **Render Menu**.
-
-* Ambient Occlusion
-    * White background image.
-
-* Normals
-    * Background image RGB: 0.5, 0.5, 1.0.
-
-* Solid color
-    * Background image *alpha*. **Keep alpha color for empty parts as for exporting we will use a padding algorithm on Gimp (UVPadder) to generate better textures for mipmaps generatio** (*See exporting section for more information*).
-
-## Baking with Blender Internal
-
-* General:
-    * Apply same material to several objects [ ctrl + L]
-    * Create a new image at the UV Editor, be sure that it is active. Keep a backup of your textures.
-    * Select *Bake Mode* and disable *Clear* at the **Render Menu** before proceed.
-    * To bake from a Hi-Poly to a low-poly select Hi then Low. Check Selected to active.
-    * To improve rendering quality at **World** menu increase **Gathering** > **Samples** (even if it is disabled).
-* Textures (last step)
-    * When you have finished with materials, baking and use this bake option to generate a unique texture with all filters applied.
-    * It works even when you create multiple UVs to add detail to certain parts of your model.
-    * Join all meshes into a single one, applying modifiers and select common UV map for a succesful process.
-
-### Blender Internal Materials
-
-* Use them to previsualize your changes and also to prepare a **Texture baking** step.
-  * Create a material and add textures:
-     * For the *Normals* be sure that the affect *Geometry > Normal* and to select at *Image Sampling* **Normal Map > Tangent**.
-     * For detail textures (over textures) be sure to change the **Blending Mode** to **Multiply**.
-
-## Baking with Cycles
-
-* General:
-    * Add *Nodes* [ shift + a ]
-    * Open *Node Editor View*.
-    * Be sure to select the correct **Texture Node** when backing.
-    * Select *Bake Mode* and disable *Clear* at the **Render Menu** before proceed.
-    * To bake from a Hi-Poly to a low-poly select Hi then Low. Check Selected to active.
-    * Sampling settings:
-
-    ![Sampling settings for cycles](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-samples.png)
-
-* Normals:
-    * To bake from a Hi-Poly to a low-poly select Hi then Low. Check Selected to active.
-    * Adjust Ray Distance.
-
-    ![Baking normals on cycles](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-normals.png)
-
-* Baking multiple normals:
-    * This workarround uses color baking to consolidate multiple UVs into a single one. This procedure is to add more details to a part of the model and then optimize the size by backing everything into a single texture.
-    * Create different UV-Maps to add more detail and configure a material as here (note the unconnected node for the bake resulting texture):
-
-    ![Baking multiple normals different UVs](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-multiple-uvs.png)
-    * Add a material and apply it to the rest of the model, create a *Default Normal Texture* (RGB: 0.5, 0.5, 1.0.):
-
-    ![Baking multiple normals different Materials](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-multiple-baking-mat.png)
-    * While selecting the unconnected *Resulting Node* (Image Texture named: NewNormal in the picture) bake *Diffuse Color*.
-
-    ![Baking color on cycles](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-cycles-baking-color.png)
-
-* Baking multiple textures:
-    * Apply the previous steps but instead of setting a Normal Texture on the color of your Difuse Shader, link your texture.
-
-### Baking FAQ:
-
-* "No object or images found to bake to":
-
-  * On *edit mode* selecting all the *faces* check at the *UV editor* that you've selected the correct image to bake to.
-
-  * Check that the objects are visible for rendering on the Hierarchy menu.
-
-    ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-no-object-images-bake.png)
-
-  * Be sure to enable **Use the scene's active camera and layers in this view**.
-
-    ![No object or images found to bake to](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-no-object-images-bake.png)
- 
-## Painting
-
-> This workflow of Blender is partially broken. It is recommended to use it with caution (to add details and not for a complete asset painting). If you have access to **Substance Painter** it is better to use it, if not, you can *Bake base difusse colors* and use **Gimp** and/or **Krita** for texture painting. 
-
-* General
-    * Brush size [ F ]
-    * Strength [ shift + F ]
-    * Stroke method [ E ]
-    * Paint: *Mix mode*.
-    * Erase: *Erase alpha mode*.
-    * Bleed: outer margin to avoid artifacts on compressed versions of the texture. [Broken on 2.78 - 2.79c](https://developer.blender.org/T50831) - it is recommended to export them and use UVPadder on Gimp to fix this issue and even create better textures that will not show artifacts when mipmaps are generated on the Game Engine (*See Texture Exporting section for more details*).
-
-* Add multiple slots for each type of detail. For example:
-   * Color variation.
-   * Border details:
-        * Activate *Cavity Mask*.
-        * Add a *Subdivide modifier* with a *Simple* subdivision type. **DO NOT APPLY IT**.
-
-* Gradient:
-   * Brush: fill-
-   * Stroke method: line.
-
-* It is recommended to paint everything (specially gradients) using perspective mode with a FOV of 250 [ N menu ].
 
 ## Exporting
 
@@ -336,13 +232,37 @@ Transformations work mostly as edit mode. **Always apply rotation and scale** [ 
 
   ![UV Image empty space filled with color](https://equilaterus.github.io/wikilaterus/assets/img/blender/uv-empty-color.png)
 
-  Full video with a discussion regarding this topic: [![Mipmaps, UV Seams, & UV Padding](https://img.youtube.com/vi/GD7mlc6h4N8/0.jpg)](https://youtu.be/GD7mlc6h4N8) 
+  Full video with a discussion regarding this topic: 
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/GD7mlc6h4N8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
 
 ### Model
 
-* As of Blender 2.78 keep the default settings and check *Tangent Space* option in the *Geometries* tab of the FBX exporter.
+* For both Blender 2.8 or 2.7, keep the default settings and check *Tangent Space* option in the *Geometries* tab of the FBX exporter.
 
-  ![Blender 2.78 to UE export settings](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-fbx-export-tangent.png)
+  ![Blender to UE export settings](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender-fbx-export-tangent.png)
+
+### Exporting animations and Rigs:
+
+Please refer to this tools:
+
+#### Mr. Manequinns Tools
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/UCESgYBphLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Project page](https://gumroad.com/l/MrMannequinsTools)
+
+### Mixamo
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/0N4gtmDANKo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Project page](https://www.mixamo.com/)
+
+You may want to check [this tool](https://www.unrealengine.com/marketplace/en-US/product/mixamo-animation-retargeting) to enable Auto Retargeting, so your Mixamo Characters are compatible with UE4 Skeletons.
 
 
+### Auto Rig Pro (PAID)
 
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/jyXxI4Mw05E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[Project page](https://blendermarket.com/products/auto-rig-pro)
