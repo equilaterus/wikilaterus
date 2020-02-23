@@ -5,8 +5,6 @@ wikiPageName: Videogames-UE4-Content-Creation
 menu: wiki
 ---
 
-> This is a WIP wikilaterus page
-
 ## Static Meshes
 
 ### Naming:
