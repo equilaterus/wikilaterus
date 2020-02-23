@@ -16,6 +16,13 @@ menu: wiki
 
 ## Recommended settings
 
+### Settings for Blender 2.8x
+
+* Interface:
+    * Edit > Preferences > Navigation > **Auto depth**: turn on for a better navigation between closer and far objects.
+    * To enable the object gizmos, search for the *Show Gizmo* menu located at the upper right corner of your viewport.
+      ![Blender object gizmos](https://equilaterus.github.io/wikilaterus/assets/img/blender/blender2.8-gizmos.png)
+
 ### Settings for Blender 2.7x
 
 * Interface
