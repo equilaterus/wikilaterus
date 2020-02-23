@@ -19,6 +19,22 @@ Probably you have it already installed. Just open a PowerShell Prompt (not CMD).
 
 * **I can't see Run With Powershell option**: Right click on the **.ps1** file that you're trying to run and select *open with...*, select Notepad and be sure to enable the option *always open ps1 files with this application*.
 
+* **How to run a PowerShell with a BAT file?**: Create a file with the same name as your ps1 file but change its extension to .bat. Add one of the following contents to the file:
+
+  * Without admin rights:
+    ```
+    @ECHO OFF
+    PowerShell.exe -NoProfile -ExecutionPolicy Bypass -Command "& '%~dpn0.ps1'"
+    PAUSE
+    ```
+
+  * With admin rights: 
+    ```
+    @ECHO OFF
+    PowerShell.exe -NoProfile -Command "& {Start-Process PowerShell.exe -ArgumentList '-NoProfile -ExecutionPolicy Bypass -File ""%~dpn0.ps1""' -Verb RunAs}"
+    PAUSE
+    ```
+
 ### Linux 
 
 Follow [these instructions](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6) and start it typing **pwsh** or **sudo pwsh** on bash (use the second one to start PowerShell with Root privileges).
