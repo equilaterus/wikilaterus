@@ -11,7 +11,7 @@ We have a project setup [right here on GitHub](https://github.com/equilaterus/ue
 
 ## UE4 AI
 
-* [Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/index.html)
+[Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/index.html)
 
 * To enable the debugger set a key binding in *Project Settings > Engine - Gameplay Debbuger > Activation Key*. If you're using a non default US keyboard or a keyboard with international bindings, it is recommended to set a plain key as Asterisk (*) or Minus (-), instead of something like an Apostrophe (') that won't be triggered by a single key-press on a US-International setup.
 
@@ -27,10 +27,13 @@ We have a project setup [right here on GitHub](https://github.com/equilaterus/ue
 
 ### AI Perception
 
-* Add component **AIPerception**.
-* **More info:** [Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/AIPerception/index.html)
+[Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/AIPerception/index.html)
 
-## Behavior trees
+* Add component **AIPerception**.
+
+### Behavior trees
+
+[Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/index.html)
 
 * [Quick Start Guide](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/BehaviorTreeQuickStart/index.html)
 
@@ -40,10 +43,14 @@ We have a project setup [right here on GitHub](https://github.com/equilaterus/ue
   * **Decorator Nodes**: Also known as conditionals. These attach to another node and make decisions on whether or not a branch in the tree, or even a single node, can be executed.
   * **Service Nodes**: These attach to Composite nodes, and will execute at their defined frequency as long as their branch is being executed. These are often used to make checks and to update the Blackboard. These take the place of traditional Parallel nodes in other Behavior Tree systems.
 
-* **More info:** [Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/index.html)
 
 
-### How to do it?
+### Environment Query System (EQS) 
+
+[Official Docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/EQS/index.html)
+
+
+## How to do it?
 
 * **Convert Mouse Location to World Space**: Interact with 3D objects using players' mouse.
   [See video](https://www.youtube.com/watch?v=b1_efR9hrT4)
