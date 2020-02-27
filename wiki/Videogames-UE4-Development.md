@@ -54,3 +54,4 @@ We have a project setup [right here on GitHub](https://github.com/equilaterus/ue
 
 * **Convert Mouse Location to World Space**: Interact with 3D objects using players' mouse.
   [See video](https://www.youtube.com/watch?v=b1_efR9hrT4)
+* **Reducing Packaged Game Size**: [See here](https://docs.unrealengine.com/en-US/Engine/Performance/ReducingPackageSize/index.html)
