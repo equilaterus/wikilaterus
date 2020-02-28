@@ -31,6 +31,8 @@ We have a project setup [right here on GitHub](https://github.com/equilaterus/ue
 
 * Add component **AIPerception**.
 
+* [UE4 AI Perception with C++](https://www.thinkandbuild.it/ue4-ai-perception-system/)
+
 ### Behavior trees
 
 [Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/BehaviorTrees/index.html)
