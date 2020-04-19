@@ -45,11 +45,19 @@ We have a project setup [right here on GitHub](https://github.com/equilaterus/ue
   * **Decorator Nodes**: Also known as conditionals. These attach to another node and make decisions on whether or not a branch in the tree, or even a single node, can be executed.
   * **Service Nodes**: These attach to Composite nodes, and will execute at their defined frequency as long as their branch is being executed. These are often used to make checks and to update the Blackboard. These take the place of traditional Parallel nodes in other Behavior Tree systems.
 
-
-
 ### Environment Query System (EQS) 
 
 [Official Docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/EQS/index.html)
+
+## UE4 C++
+
+### UE4 AI movement C++
+
+See this tutorial: https://www.vikram.codes/blog/ai/01-basic-navigation
+Improved and updated code to seek for a Random Reachable Location in the Navmesh: 
+
+* [MovementAIController.h](https://gist.github.com/dacanizares/6f47164e3d86d9fd6d19bd129d888695)
+* [MovementAIController.cpp](https://gist.github.com/dacanizares/5db9c59281a9c9049bf819acce7e29bc)
 
 
 ## How to do it?
