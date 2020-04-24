@@ -58,6 +58,7 @@ Improved and updated code to seek for a Random Reachable Location in the Navmesh
 
 * [MovementAIController.h](https://gist.github.com/dacanizares/6f47164e3d86d9fd6d19bd129d888695)
 * [MovementAIController.cpp](https://gist.github.com/dacanizares/5db9c59281a9c9049bf819acce7e29bc)
+* Don't forget to add the NavigationSystem module in your {project}.Build.cs. [More info](https://docs.unrealengine.com/en-US/Programming/Modules/Gameplay/index.html): it would be suffice to add "NavigationSystem" string to the PublicDependencyModuleNames.AddRange(...) parameters.
 
 
 ## How to do it?
