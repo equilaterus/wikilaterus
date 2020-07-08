@@ -7,7 +7,84 @@ menu: wiki
 
 ## UE4 and Git-LFS
 
-We have a project setup [right here on GitHub](https://github.com/equilaterus/ue4-gitlfs-baseproject).
+We have a project setup [right here on GitHub](https://github.com/equilaterus-gamestudios/ue4-gitlfs-baseproject).
+
+## UE4 C++
+
+Crash course: [Converting Blueprints to C++](https://www.unrealengine.com/en-US/onlinelearning-courses/converting-blueprints-to-c).
+
+Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Reference/index.html).
+
+* UPROPERTY
+* UFUNCTION
+  * BLUEPRINT PURE / CALLABLE
+  * BLUEPRINT IMPLEMENTABLE EVENT
+  * BLUEPRINT NATIVE EVENT
+* EVENTS
+* DELEGATES
+  * Dynamic - Not Dynamic
+  * Singlecast - Multicast
+
+### Delegate samples
+
+```cpp
+/* DECLARATION */
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FCompletedQuestSignature, int32, index)
+
+UPROPERTY(BlueprintAssignable, BlueprintCallable)
+FCompletedQuestSignature CompletedQuest;
+
+/* BROADCAST */
+CompletedQuest.Broadcast(parameter);
+
+/* SUBSCRIBE */
+UFUNCTION() // Required for dynamic
+void FunctionHandler(int32 index)
+
+CompletedQuest.AddDynamic(this, &Class::FunctionHandler);
+CompletedQuest.Add // For non dynamic version
+
+```
+
+### Vector samples
+
+Forward unit vector from a given rotation.
+
+```cpp
+GetComponentRotation().Vector()
+```
+
+Calculate vector of size *MaxDistance* starting at actor/component location on the same rotation as the actor/component.
+
+```cpp
+FVector UClass::GetMaxGrabLocation() const
+{
+        // GetComponentLocation or GetLocation depending if you're on an Actor or Component
+        // same with Rotation
+	return GetComponentLocation() + GetComponentRotation().Vector() * MaxDistance;
+}
+```
+
+
+### Raytracing samples
+
+**TODO**
+
+### Sweep samples
+
+```cpp
+// Params with ignore self
+FCollisionQueryParams TraceParams(FName("SphereTrace"), false, GetOwner());
+FHitResult OutHit;
+
+// Sweep for ECC_PhysicsBody or ECC_WorldDynamic
+if(GetWorld()->SweepSingleByObjectType(
+	OutHit, GetComponentLocation(), GetMaxGrabLocation(), FQuat::Identity,
+        FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECollisionChannel::ECC_PhysicsBody) | ECC_TO_BITFIELD(ECollisionChannel::ECC_WorldDynamic)), 
+        FCollisionShape::MakeSphere(GrabRadius), TraceParams)) {
+        // Handle hit!
+}
+```
 
 ## UE4 AI
 
@@ -49,8 +126,6 @@ We have a project setup [right here on GitHub](https://github.com/equilaterus/ue
 
 [Official Docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/EQS/index.html)
 
-## UE4 C++
-
 ### UE4 AI movement C++
 
 See this tutorial: https://www.vikram.codes/blog/ai/01-basic-navigation
@@ -66,3 +141,4 @@ Improved and updated code to seek for a Random Reachable Location in the Navmesh
 * **Convert Mouse Location to World Space**: Interact with 3D objects using players' mouse.
   [See video](https://www.youtube.com/watch?v=b1_efR9hrT4)
 * **Reducing Packaged Game Size**: [See here](https://docs.unrealengine.com/en-US/Engine/Performance/ReducingPackageSize/index.html)
+ 
