@@ -25,6 +25,25 @@ Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Progr
   * Dynamic - Not Dynamic
   * Singlecast - Multicast
 
+### Common includes
+
+|Class                | #include                   |
+|---------------------|----------------------------|
+|UWorld               |Engine/World.h              |
+|AActor               |GameFramework/Actor.h       |
+|UActorComponent      |Components/ActorComponent.h |
+|USceneComponent      |Components/SceneComponent.h |
+|UGameplayStatics     |Engine/World.h              |
+|UKismetSystemLibrary |Kismet/GameplayStatics.h    |
+|UKismetMathLibrary*  | Kismet/KismetMathLibrary.h |
+|FMath                |Math/UnrealMathUtility.h    |
+|UPhysicsHandleComponent | PhysicsEngine/PhysicsHandleComponent.h |
+
+* KismetMath is usually a wrapper to FMath. Review implementation and try to call directly FMath
+* How to found BP nodes? Put your mouse over the node, see target and try to lookup for the file and lastly search for some keyword on the function name. For example:
+
+  ![UE4 find Blueprint nodes on C++](https://equilaterus.github.io/wikilaterus/assets/img/ue4/search-blueprint-code-cpp.png)
+
 ### Delegate samples
 
 ```cpp
