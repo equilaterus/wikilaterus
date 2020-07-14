@@ -86,6 +86,27 @@ if(GetWorld()->SweepSingleByObjectType(
 }
 ```
 
+## UE4 Animation
+
+Documentation: [Animation](https://docs.unrealengine.com/en-US/Engine/Animation/index.html)
+
+* [Basics Course](https://www.youtube.com/watch?v=-slbsR_WWAE&list=PLL0cLF8gjBpqpCGt9ayn4Ip1p6kvgXYi2)
+* [UE4 Livestream](https://www.youtube.com/watch?v=YVC-DL9Ibf0)
+  * Animation Blueprints
+  * Locomotion 
+  * Blendspaces
+  * Anim montages
+  * Caching poses
+  * Layering
+  * Modifying bones
+  * Look at
+* Other contents:
+  * [Subanim](https://docs.unrealengine.com/en-US/Engine/Animation/AnimHowTo/SubAnimInstance/index.html)
+  * [Anim offset](https://docs.unrealengine.com/en-US/Engine/Animation/AnimHowTo/AimOffset/index.html)
+  * [Physical anims](https://www.youtube.com/watch?v=N1tDjbFXeOo)
+  * [Paragon](https://www.youtube.com/watch?v=YlKA22Hzerk)
+* [How to's](https://docs.unrealengine.com/en-US/Engine/Animation/AnimHowTo/index.html)
+
 ## UE4 AI
 
 [Official docs](https://docs.unrealengine.com/en-US/Engine/ArtificialIntelligence/index.html)
