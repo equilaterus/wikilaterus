@@ -12,18 +12,14 @@ We have a project setup [right here on GitHub](https://github.com/equilaterus-ga
 ## UE4 C++
 
 Crash course: [Converting Blueprints to C++](https://www.unrealengine.com/en-US/onlinelearning-courses/converting-blueprints-to-c).
-
 Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Reference/index.html).
 
-* UPROPERTY
-* UFUNCTION
+* [UPROPERTY](https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Reference/Properties/index.html)
+* [UFUNCTION](https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Reference/Functions/index.html)
   * BLUEPRINT PURE / CALLABLE
   * BLUEPRINT IMPLEMENTABLE EVENT
   * BLUEPRINT NATIVE EVENT
-* EVENTS
-* DELEGATES
-  * Dynamic - Not Dynamic
-  * Singlecast - Multicast
+* [DELEGATES](https://docs.unrealengine.com/en-US/Programming/UnrealArchitecture/Delegates/index.html)
 
 ### Common includes
 
@@ -39,10 +35,60 @@ Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Progr
 |FMath                |Math/UnrealMathUtility.h    |
 |UPhysicsHandleComponent | PhysicsEngine/PhysicsHandleComponent.h |
 
-* KismetMath is usually a wrapper to FMath. Review implementation and try to call directly FMath
+* (*) KismetMath is usually a wrapper to FMath. Review implementation and try to call directly FMath.
+
+### Mapping types
+
+|Blueprint            | C++                        |
+|---------------------|----------------------------|
+|String               |FString                     |
+|Name                 |FName                       |
+|Vector               |FVector                     |
+|Rotator              |FRotator                    |
+|Transform            |FTransform                  |
+|Object               |UObject*                    |
+|Actor                |AActor*                     |
+|ActorComponent       |UActorComponent*            |
+|Float                |float                       |
+|-                    |double                      |
+|Integer              |int32                       |
+|-                    |uint32                      |
+|Integer64            |int64                       |
+|-                    |uint64                      |
+|Bool                 |bool                        |
+
+### Properties Visibility
+
+* Blueprint:
+  * BlueprintReadonly
+  * BlueprintReadWrite
+* Defaults and instance:
+  * VisibleAnywhere
+  * EditAnywhere
+* Only defaults:
+  * VisibleDefaultsOnly
+  * EditDefaultsOnly
+* Only instance:
+  * VisibleInstanceOnly
+  * EditInstanceOnly
+  
+
+### Tips
+
+* You can create C++ files either manually or using the UE4 editor, first case requires to regenerate project files (left click on .uproject Generate Visual Studio Project Files).
+* After syncing files with Git, it's a good idea to regenerate project files.
+* If Hot reloading doesn't seem to take your changes, close editor and Rebuild project.
 * How to found BP nodes? Put your mouse over the node, see target and try to lookup for the file and lastly search for some keyword on the function name. For example:
 
   ![UE4 find Blueprint nodes on C++](https://equilaterus.github.io/wikilaterus/assets/img/ue4/search-blueprint-code-cpp.png)
+
+### Useful tools
+
+* Recommended IDE: [Rider for UE4](https://www.jetbrains.com/es-es/lp/rider-unreal/).
+* Recommended Git App: [Github Desktop](https://desktop.github.com/).
+* Recommended free Repos with Git LFS: [Azure Repos](https://azure.microsoft.com/en-us/services/devops/repos/)
+
+To clone your Azure repos with Github Desktop follow [this guide](https://github.com/desktop/desktop/blob/development/docs/integrations/azure-devops.md).
 
 ### Delegate samples
 
@@ -104,6 +150,34 @@ if(GetWorld()->SweepSingleByObjectType(
         // Handle hit!
 }
 ```
+
+### Anim notifiers C++
+
+```cpp
+ UCLASS()
+ class YOURPROJECT_API UAnimNotify_Name : public UAnimNotify
+ {
+     GENERATED_BODY()
+        
+ protected:
+
+     virtual void Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation) override;        
+ };
+    
+ void UAnimNotify_Name::Notify(USkeletalMeshComponent* MeshComp, UAnimSequenceBase* Animation)
+ {
+     Super::Notify(MeshComp, Animation);
+
+     // YOUR CODE GOES HERE
+ }
+```
+
+[More info](https://dawnarc.com/2016/10/ue4animation-notifications-animnotify/).
+
+## UE4 Plugins
+
+* [Sample project](https://github.com/ue4plugins/TextAsset)
+* [Crash course](https://learn.unrealengine.com/course/2436528)
 
 ## UE4 Animation
 
