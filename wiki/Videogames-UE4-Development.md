@@ -90,6 +90,34 @@ Documentation: [Gameplay Architecture](https://docs.unrealengine.com/en-US/Progr
 
 To clone your Azure repos with Github Desktop follow [this guide](https://github.com/desktop/desktop/blob/development/docs/integrations/azure-devops.md).
 
+### Struct template
+
+Sample UE4 C++ Struct (note F prefix):
+
+```cpp
+// MyStruct.h
+#pragma once
+#include "MyStruct.generated.h"
+
+USTRUCT(BlueprintType)
+struct FMyStruct
+{
+	GENERATED_BODY()
+	
+	UPROPERTY(BlueprintReadOnly)
+        AActor* Character;	
+
+	FMyStruct();
+};
+
+// MyStruct.cpp
+FMyStruct::FMyStruct()
+{
+	Character = nullptr;
+}
+
+```
+
 ### Delegate samples
 
 ```cpp
