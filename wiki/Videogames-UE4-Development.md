@@ -118,6 +118,81 @@ FMyStruct::FMyStruct()
 
 ```
 
+### Enum template
+
+Sample UE4 C++ enum.
+
+```cpp
+#pragma once
+#include "Enums.generated.h"
+
+UENUM(BlueprintType)
+enum class EDirection : uint8
+{
+    Left UMETA(DisplayName = "Left"),
+    Right UMETA(DisplayName = "Right"),
+    Front UMETA(DisplayName = "Front"),
+    Back UMETA(DisplayName = "Back")
+};
+
+// You can add more enums here...
+```
+
+### Interfaces
+
+Sample interface:
+
+```cpp
+#pragma once
+
+#include "CoreMinimal.h"
+#include "UObject/Interface.h"
+#include "MyInterface.generated.h"
+
+// This class does not need to be modified.
+UINTERFACE()
+class UMyInterface : public UInterface
+{
+	GENERATED_BODY()
+};
+
+/**
+ * 
+ */
+class YOURPROJECT_API IMyInterface
+{
+	GENERATED_BODY()
+
+public:
+	UFUNCTION(BlueprintNativeEvent)
+	void YourMethod();
+};
+
+```
+
+To use it:
+
+```cpp
+// Class that implements the interface
+UCLASS()
+class YOURPROJECT_API AMyCharacter : public AActor, public IMyInterface
+{
+    GENERATED_BODY()
+public:
+    virtual void YourMethod_Implementation() override;
+}
+
+
+// To use the interface from another function
+if (AnActor->Implements<UMyInterface>())
+{
+    IOHActionEntity::Execute_YourMethod(AnActor);
+}
+````
+
+More info [here](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/GameplayArchitecture/Interfaces/index.html).
+
+
 ### Delegate samples
 
 ```cpp
@@ -139,6 +214,9 @@ CompletedQuest.Add // For non dynamic version
 
 ```
 
+*NOTE:* Dynamic delegates can be serialized, their functions can be found by name, and they are slower than regular delegates. [More info](https://docs.unrealengine.com/en-US/ProgrammingAndScripting/ProgrammingWithCPP/UnrealArchitecture/Delegates/Dynamic/index.html)
+
+
 ### Vector samples
 
 Forward unit vector from a given rotation.
@@ -159,9 +237,23 @@ FVector UClass::GetMaxGrabLocation() const
 ```
 
 
-### Raytracing samples
+### Linetracing samples
 
-**TODO**
+```cpp
+// Single by channel
+FHitResult HitResult;
+if (GetWorld()->LineTraceSingleByChannel(HitResult, Start, End, ECC_Visibility))
+{
+    // Handle hit!
+}
+
+// Linetrace for ECC_PhysicsBody or ECC_WorldDynamic
+FHitResult OutHit;
+if(GetWorld()->LineTraceSingleByObjectType(
+   OutHit, Start, End, FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECollisionChannel::ECC_PhysicsBody) | ECC_TO_BITFIELD(ECollisionChannel::ECC_WorldDynamic)))) {
+    // Handle hit!
+}
+```
 
 ### Sweep samples
 
@@ -201,6 +293,42 @@ if(GetWorld()->SweepSingleByObjectType(
 ```
 
 [More info](https://dawnarc.com/2016/10/ue4animation-notifications-animnotify/).
+
+### Anim instance C++
+
+* UE4 Animation system:
+
+```cpp
+UCLASS()
+class YOURPROJECT_API UCharacterAnimInstance : public UAnimInstance
+{
+	GENERATED_BODY()
+
+public:
+	UCharacterAnimInstance();
+
+	UPROPERTY(EditDefaultsOnly)
+	float MinWalkSpeed;
+}
+```
+
+* Pixel2d:
+
+```cpp
+UCLASS()
+class YOURPROJECT_API UCharacterAnimInstance : public UPixel2DAnimInstance
+{
+	GENERATED_BODY()
+
+public:
+	UCharacterAnimInstance();
+
+	UPROPERTY(EditDefaultsOnly)
+	float MinWalkSpeed;
+}
+```
+
+
 
 ## UE4 Plugins
 
@@ -275,7 +403,7 @@ Improved and updated code to seek for a Random Reachable Location in the Navmesh
 
 * [MovementAIController.h](https://gist.github.com/dacanizares/6f47164e3d86d9fd6d19bd129d888695)
 * [MovementAIController.cpp](https://gist.github.com/dacanizares/5db9c59281a9c9049bf819acce7e29bc)
-* Don't forget to add the NavigationSystem module in your {project}.Build.cs. [More info](https://docs.unrealengine.com/en-US/Programming/Modules/Gameplay/index.html): it would be suffice to add "NavigationSystem" string to the PublicDependencyModuleNames.AddRange(...) parameters.
+* Don't forget to add the NavigationSystem and AIModule modules in your {project}.Build.cs. [More info](https://docs.unrealengine.com/en-US/Programming/Modules/Gameplay/index.html): it would be suffice to add "NavigationSystem" and "AIModule" strings to the PublicDependencyModuleNames.AddRange(...) parameters.
 
 
 ## How to do it?
