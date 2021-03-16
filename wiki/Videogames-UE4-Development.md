@@ -335,6 +335,28 @@ public:
 * [Sample project](https://github.com/ue4plugins/TextAsset)
 * [Crash course](https://learn.unrealengine.com/course/2436528)
 
+
+## UE4 Audio
+
+### Reverb
+
+To activate the reverb, add the following line to your project **/Config/DefaultEngine.ini**:
+
+```
+[Audio] 
+UseAudioMixer=true
+```
+
+To generate a build, you will need to add that same line to the path in the config file for each platform that you're going to use. For example Windows is: *.../Epic Games/UE_4.[version]/Engine/Config/Windows/WindowsEngine.ini*.
+
+
+Create a **Sound > Sound Attenuation** asset and configure it on your **Cue** as the attenuation preset. Add an **Audio Volume** to your level, set it big enough to cover your playable area and set the following properties:
+
+* Settings -> Apply Reverb: True.
+* Settings -> Reverb effect: select one from the dropdown.
+
+* For more info check this video [Reverb Tutorial](https://www.youtube.com/watch?v=ZFjD5xtoMSg). Note that if you added the configuration to your project .ini, you won't need to execute additional commands on the UE4 console.
+
 ## UE4 Animation
 
 Documentation: [Animation](https://docs.unrealengine.com/en-US/Engine/Animation/index.html)
