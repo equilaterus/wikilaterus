@@ -347,9 +347,6 @@ To activate the reverb, add the following line to your project **/Config/Default
 UseAudioMixer=true
 ```
 
-To generate a build, you will need to add that same line to the path in the config file for each platform that you're going to use. For example Windows is: *.../Epic Games/UE_4.[version]/Engine/Config/Windows/WindowsEngine.ini*.
-
-
 Create a **Sound > Sound Attenuation** asset and configure it on your **Cue** as the attenuation preset. Add an **Audio Volume** to your level, set it big enough to cover your playable area and set the following properties:
 
 * Settings -> Apply Reverb: True.
