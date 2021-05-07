@@ -328,7 +328,43 @@ public:
 }
 ```
 
+### Billboards (editor icons)
 
+```cpp
+// .h
+class CLASS_API AMyClass : public AActor
+{
+....
+protected:
+#if WITH_EDITORONLY_DATA
+	/** Editor Billboard */
+	UPROPERTY()
+	UBillboardComponent* BillboardComponent;
+}
+#endif
+....
+
+// .cpp
+AMyClass::AMyClass()
+{
+  USceneComponent* SceneComponent = CreateDefaultSubobject<USceneComponent>(TEXT("SceneComp"));
+  RootComponent = SceneComponent;
+  RootComponent->Mobility = EComponentMobility::Static; // Or movable
+
+  #if WITH_EDITORONLY_DATA
+  BillboardComponent = CreateEditorOnlyDefaultSubobject<UBillboardComponent>(TEXT("Sprite"));
+  if (BillboardComponent)
+  {
+	BillboardComponent->SetWorldTransform(
+		FTransform(FRotator::ZeroRotator, FVector(0,0,90), FVector::OneVector * 4)
+	);
+	BillboardComponent->Sprite = ConstructorHelpers::FObjectFinderOptional<UTexture2D>(TEXT("/PATH/TO-TEXTURE")).Get();
+		BillboardComponent->SetupAttachment(RootComponent);
+	}
+  }
+  #endif
+}
+```
 
 ## UE4 Plugins
 
