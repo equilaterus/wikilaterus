@@ -1,7 +1,5 @@
 # Wikilaterus
 
-[![Build Status](https://travis-ci.org/equilaterus/wikilaterus.svg?branch=master)](https://travis-ci.org/equilaterus/wikilaterus) 
-
 Equilaterus' Wiki based on [Bootlaterus](https://equilaterus.github.io/bootlaterus/).
 
 Published at: https://equilaterus.github.io/wikilaterus/
