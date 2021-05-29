@@ -239,6 +239,8 @@ FVector UClass::GetMaxGrabLocation() const
 
 ### Linetracing samples
 
+Complete custom sample:
+
 ```cpp
 // Single by channel
 FHitResult HitResult;
@@ -255,21 +257,49 @@ if(GetWorld()->LineTraceSingleByObjectType(
 }
 ```
 
+Using Kismet (you can open its implementation to see more samples):
+
+```cpp
+// LineTraceSingle or LineTraceMulti
+if (UKismetSystemLibrary::LineTraceSingle(
+    WorldContextObject, StartLocation, EndLocation,
+    UEngineTypes::ConvertToTraceType(ECC_Visibility), false, TArray<AActor*>(),
+    EDrawDebugTrace::ForOneFrame, OutHitResult, true))
+{
+    // Handle hit(s)!
+}
+```
+
 ### Sweep samples
+
+Complete custom sample:
 
 ```cpp
 // Params with ignore self
 FCollisionQueryParams TraceParams(FName("SphereTrace"), false, GetOwner());
 FHitResult OutHit;
 
-// Sweep for ECC_PhysicsBody or ECC_WorldDynamic
-if(GetWorld()->SweepSingleByObjectType(
-	OutHit, GetComponentLocation(), GetMaxGrabLocation(), FQuat::Identity,
-        FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECollisionChannel::ECC_PhysicsBody) | ECC_TO_BITFIELD(ECollisionChannel::ECC_WorldDynamic)), 
-        FCollisionShape::MakeSphere(GrabRadius), TraceParams)) {
-        // Handle hit!
+// Sweep for ECC_PhysicsBody or ECC_WorldDynamic (SweepSingle or SweepMulti)
+if (GetWorld()->SweepSingleByObjectType(
+    OutHit, GetComponentLocation(), GetMaxGrabLocation(), FQuat::Identity,
+    FCollisionObjectQueryParams(ECC_TO_BITFIELD(ECollisionChannel::ECC_PhysicsBody) | ECC_TO_BITFIELD(ECollisionChannel::ECC_WorldDynamic)), 
+    FCollisionShape::MakeSphere(GrabRadius), TraceParams)) 
+{
+    // Handle hit!
 }
 ```
+
+Using Kismet (you can open its implementation to see more samples):
+
+```cpp
+// SphereTraceSingle or SphereTraceMulti 
+if (UKismetSystemLibrary::SphereTraceMulti(this, CameraComponent->GetComponentLocation(), GetActorLocation(),
+    Radius, UEngineTypes::ConvertToTraceType(ECC_Visibility), false,
+    TArray<AActor*>(), EDrawDebugTrace::ForOneFrame, OutHits, true)
+{
+    // Handle hit(s)!
+}
+````
 
 ### Anim notifiers C++
 
@@ -328,6 +358,68 @@ public:
 }
 ```
 
+### BoxCollider
+
+```cpp
+// .h
+class CLASS_API AMyClass : public AActor
+{
+....
+private:
+	UPROPERTY(BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
+	UBoxComponent* BoxCollider;
+protected:
+        virtual void BeginPlay() override;
+public:
+        UFUNCTION()
+        void BeginOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult & SweepResult);
+
+	UFUNCTION()
+        void EndOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex);
+
+...
+}
+
+// .cpp
+AMyClass::AMyClass()
+{
+	BoxCollider= CreateDefaultSubobject<UBoxComponent>(TEXT("BoxCollider"));
+	BoxCollider->SetCollisionProfileName(TEXT("Custom"));
+	// TODO: Set channel (if nedeed): BoxCollision->SetCollisionObjectType(ECC_Visibility);
+        // TODO: Set size:
+	BoxCollider->SetBoxExtent(FVector(10, 10, 10));
+	BoxCollider->SetRelativeTransform(FTransform(FRotator::ZeroRotator, FVector(0, 0, 10), FVector(1, 1, 1)));
+        // TODO: Customize collision config
+	BoxCollider->SetCollisionResponseToAllChannels(ECR_Ignore);
+	BoxCollider->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	BoxCollider->SetCollisionResponseToChannel(ECC_Pawn, ECR_Overlap);
+	BoxCollider->SetCollisionResponseToChannel(ECC_Visibility, ECR_Overlap);
+	BoxCollider->SetGenerateOverlapEvents(true);
+	BoxCollider->SetupAttachment(RootComponent);
+}
+
+void AMyClass::BeginPlay()
+{
+	Super::BeginPlay();
+
+	BoxCollider->OnComponentBeginOverlap.AddDynamic(this, &AMyClass::BeginOverlapBoxCollider);
+	BoxCollider->OnComponentEndOverlap.AddDynamic(this, &AMyClass::EndOverlapBoxCollider);
+}
+
+void AMyClass::BeginOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	// YOUR CODE GOES HERE
+}
+
+void AMyClass::EndOverlapBoxCollider(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	// YOUR CODE GOES HERE
+}
+
+```
+
 ### Billboards (editor icons)
 
 ```cpp
@@ -335,12 +427,11 @@ public:
 class CLASS_API AMyClass : public AActor
 {
 ....
-protected:
+private:
 #if WITH_EDITORONLY_DATA
 	/** Editor Billboard */
 	UPROPERTY()
 	UBillboardComponent* BillboardComponent;
-}
 #endif
 ....
 
@@ -356,11 +447,10 @@ AMyClass::AMyClass()
   if (BillboardComponent)
   {
 	BillboardComponent->SetWorldTransform(
-		FTransform(FRotator::ZeroRotator, FVector(0,0,90), FVector::OneVector * 4)
+		FTransform(FRotator::ZeroRotator, FVector::ZeroVector, FVector::OneVector * 4)
 	);
 	BillboardComponent->Sprite = ConstructorHelpers::FObjectFinderOptional<UTexture2D>(TEXT("/PATH/TO-TEXTURE")).Get();
 		BillboardComponent->SetupAttachment(RootComponent);
-	}
   }
   #endif
 }
