@@ -37,11 +37,12 @@ Probably you have it already installed. Just open a PowerShell Prompt (not CMD).
 
 ### Linux 
 
-Follow [these instructions](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6) and start it typing **pwsh** or **sudo pwsh** on bash (use the second one to start PowerShell with Root privileges).
+See section **Linux Dev Environment** on Wikilaterus.
+
 
 ### Mac
 
-Follow [these instructions](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6) and start it typing **pwsh** or **sudo pwsh** on bash (use the second one to start PowerShell with Root privileges).
+Follow [these instructions](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-macos?view=powershell-6) and start it typing **pwsh** or **sudo pwsh** on bash.
 
 
 ## Equilaterus CLI-Tools

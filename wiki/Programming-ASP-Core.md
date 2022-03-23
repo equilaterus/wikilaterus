@@ -12,6 +12,10 @@ menu: wiki
   * Tutorial VS - [ASP Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api?view=aspnetcore-3.0)
 * Controller action return types [ASP Core 3.0](https://docs.microsoft.com/en-us/aspnet/core/web-api/action-return-types?view=aspnetcore-3.0)
 
+## Sample Project
+
+[AspCore.SampleAPI](https://github.com/dacanizares/AspCore.SampleAPI) (Clean Architecture / Domain / Behaviors / Queries / AutoMapper / Swagger / Functional testing / CI)
+
 ## Vortex
 
 Write elegant and testeable solutions on C# using a Monadic Framework. ASP Core joins the functional side!
