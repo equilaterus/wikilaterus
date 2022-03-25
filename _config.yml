@@ -2,7 +2,6 @@ theme: minima
 title: Wikilaterus
 description: Equilaterus' wiki
 repository: equilaterus/wikilaterus
-google_analytics: UA-157790741-1
 
 ##
 # Parameters for WikiToJekyll
