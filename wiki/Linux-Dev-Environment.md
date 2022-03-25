@@ -21,12 +21,26 @@ usermod -aG sudo username
 ### VS Code (VSCodium)
 
 * [Install VSCodium](https://vscodium.com/#install)
+* Set VSCode/Codium as default editor. [more info](https://askubuntu.com/questions/648105/how-do-i-setup-microsoft-visual-studio-code-as-a-default-editor#:~:text=Debian%20alternatives%20system&text=Some%20need%20you%20to%20set,to%20the%20nautilus%20context%20menu.)
+
+  ```
+  xdg-mime default codium.desktop text/plain
+
+  # If you're using code instead of codium
+  xdg-mime default code.desktop text/plain 
+  ```
 
 ### GitHub Desktop
 
 * [Download](https://github.com/shiftkey/desktop/releases/tag/release-2.9.9-linux2). 
   * Install .deb on Debian / Ubuntu (on Debian right click run with Discover)
   * Use app-image on arch.
+
+* If you're working with Windows users:
+
+   ```
+   git config --global core.autocrlf input
+   ```
 
 ### NodeJS and NPM
 
@@ -66,11 +80,35 @@ If your project has NPM tasks with msbuild, run *Rider* using a terminal with NP
 * [Instalation Arch](https://wiki.archlinux.org/title/.NET#Installation)
 * Snaps can have problems when running web-apps.
 
+If you have multiple versions of dotnet core, create a file **global.json** in the same location as this readme with the following contents:
+
+```json
+{
+    "sdk": {
+        "version": "3.1.417" 
+    }  
+}
+```
+
+Replace the version with a 3.1.x installed on your machine. To see your SDKs:
+
+```
+dotnet --list-sdks
+```
+
+If you have trouble with [dotnet ef](https://docs.microsoft.com/en-us/ef/core/cli/dotnet) after installing it, use the following command:
+
+```
+export PATH="$PATH:$HOME/.dotnet/tools/"
+```
+
 To fix certificate error (not thrusting) run:
 
 ```
 dotnet dev-certs https
 ```
+
+
 
 ### Powershell
 
@@ -80,7 +118,7 @@ Install dotnet sdk and type:
 dotnet tool install --global PowerShell
 ```
 
->> After that use **pwsh** to start powershell.
+> After that use **pwsh** to start powershell.
 
 For dotnet core 3.1:
 
