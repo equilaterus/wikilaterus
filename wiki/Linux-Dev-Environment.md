@@ -69,9 +69,24 @@ Install with **tool-box**:
   * [Download](https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux)
   * [Installation Guide](https://www.jetbrains.com/help/rider/Installation_guide.html#toolbox)
 
-If your project has NPM tasks with msbuild, run *Rider* using a terminal with NPM access. For example: left click on Rider search for Application > Command run. Copy and run it:
+If your project has NPM tasks with msbuild (if NPM INSTALL fails during compilation), run *Rider* using a terminal with NPM access. For example: left click on Rider search for Application > Command run. Copy and run it:
 ```
 /home/equilaterus/.local/share/JetBrains/Toolbox/apps/Rider/ch-0/213.6775.4/bin/rider.sh
+```
+
+To avoid repeating the previous step, create a file **RunRider.sh** at **/home** with the following contents:
+
+```
+#!/bin/bash
+echo 'Running...'
+# Copy your Rider command....
+sh /home/equilaterus/.local/share/JetBrains/Toolbox/apps/Rider/ch-0/213.6775.4/bin/rider.sh 
+```
+
+Next time, open a console and type:
+
+```
+sh RunRider.sh
 ```
 
 ### Dotnet core
@@ -135,11 +150,20 @@ For other versions check: [nuget package](https://www.nuget.org/packages/PowerSh
 Summary:
 
 ```
+# Download SQL Server image
 sudo docker pull mcr.microsoft.com/mssql/server:2019-latest
 
+
+# Create and run sql1 container
 sudo docker run -e "ACCEPT_EULA=Y" -e "SA_PASSWORD=testdb123*" \
    -p 1433:1433 --name sql1 --hostname sql1 \
    -d mcr.microsoft.com/mssql/server:2019-latest
+
+# Delete container with DB
+docker rm /sql1 -f
+   
+# Start container
+docker start /sql1
 ```
 
 Connection string:
