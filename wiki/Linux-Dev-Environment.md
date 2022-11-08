@@ -152,14 +152,22 @@ dotnet dev-certs https
 
 You'll still have to configure trust certificates or access your page as unsecure resource from your web browser. As it is a dev env, you can safely access it as an unsafe site.
 
+**IMPORTANT!**: Before upgrading your system disable source package repo: **packages-microsoft-com-prod** (ADDED WHEN INSTALLING POWERSHELL), otherwise you may need to uninstall all dotnet (*sudo dnf remove 'dotnet*'*) and reinstall it again (after removing the repo). To remove it you can go to **Discover > Settings** and disable the repo.
+
+Error **"The configured user limit (128) on the number of inotify instances has been reached."**, increase the instances with the following command:
+
+```
+echo fs.inotify.max_user_instances=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
 
 ### Powershell
 
+* NOT RECOMMENDED as the MSFT repo can cause problem when you update dotnet!
 * [Install Fedora](https://docs.microsoft.com/en-us/powershell/scripting/install/install-fedora?view=powershell-7.2)
 * [Install Debian](https://docs.microsoft.com/en-us/powershell/scripting/install/install-debian?view=powershell-7.2)
 * [Install Arch](https://ephos.github.io/posts/2018-9-17-Pwsh-ArchLinux#arch-linux) *untested*.
 
-If you prefer, you can install it as a dotnet tool (but previous methods are better):
+If you prefer, you can install it as a dotnet tool:
 
 ```
 dotnet tool install --global PowerShell
@@ -204,7 +212,21 @@ Connection string:
 string _connString = "Server=localhost,1433;Database=Master;User Id=SA;Password=testdb123*";
 ```
 
-### Fedora flatpaks
+### Temperature and other sensors
+
+Run the following steps and execute *xsensors*:
+
+```
+sudo dnf install lm_sensors
+sudo sensors-detect
+# Configure
+sensors
+
+# Install GUI app
+sudo dnf install xsensors
+```
+
+### Other software
 
 Dropbox:
 
@@ -220,4 +242,124 @@ sudo dnf install https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-
 sudo dnf install steam
 ```
 
+Telegram:
 
+```
+sudo flatpak install flathub org.telegram.desktop
+```
+
+Flatpacks permissions:
+
+```
+flatpak install flathub com.github.tchx84.Flatseal
+```
+
+
+## Share files with Samba
+
+> This section is a WIP. Tested only on Fedora KDE.
+
+1. Installation:
+
+   ```bash
+   sudo dnf install samba
+   hostnamectl status
+   # Set the hostname that you prefer 
+   sudo hostnamectl set-hostname 'YOU-HOST-NAME'
+
+   # Add a password to your user when using samba
+   # used to auth external users to open shared resources
+   # USERNAME is your Linux username
+   sudo smbpasswd -a USERNAME
+
+   # List users
+   sudo pdbedit -L -v
+
+   # Firewall
+   sudo firewall-cmd --permanent --add-service={samba,samba-client} --zone=home
+   sudo firewall-cmd --reload
+   # Verify Samba is included in your active firewall:
+   sudo firewall-cmd --list-services
+
+   #Enable and start smb and nmb services:
+   sudo systemctl enable smb.service
+   sudo systemctl start smb.service
+
+   #Verify smb service:
+   sudo systemctl status smb.service
+
+   
+   # IF YOU CANT ACCESS YOUR SMB RESOURCES
+   # Open SELinux to see warnings, common fixes:
+
+   # If you want samba to export all ReadOnly
+   setsebool -P samba_export_all_ro 1
+   # If you want samba  to enable home dirs
+   setsebool -P samba_enable_home_dirs 1
+   # If you want samba to export all ReadWrite
+   setsebool -P samba_export_all_rw 1
+   ```
+
+2. Sample configuration:
+
+```
+[global]
+  workgroup = workgroup
+  usershare allow guests = Yes
+  usershare owner only = No
+  guest ok = No
+  force user = USERNAME ONLY IF YOU HAVE PROBLEMS WITH SOME PATHS
+               https://forums.linuxmint.com/viewtopic.php?t=201079
+
+[memes]
+  comment = memes
+  path = /path/to/memes
+  read only = Yes
+  public = Yes
+  browseable = Yes
+```
+
+Dont forget to start the service: **sudo systemctl start smb.service**
+
+
+### Configure *Usershares* 
+
+OPTIONAL - To use Dolphin to share elements directly. Not working sometimes:
+
+   ```
+   sudo dnf install kdenetwork-filesharing
+
+   mkdir /var/lib/samba/usershares
+   groupadd -r sambashare
+   chown root:sambashare /var/lib/samba/usershares  
+   chmod 1770 /var/lib/samba/usershares
+   ```
+
+   Set the following parameters in the */etc/samba/smb.conf* configuration file:
+
+   ```
+   /etc/samba/smb.conf
+   [global]
+    usershare path = /var/lib/samba/usershares
+    usershare max shares = 100
+    usershare allow guests = yes
+    usershare owner only = yes
+   ```
+
+   Add the user to the sambashare group. Replace USERNAME with the name of your linux user:
+  
+   ```
+   gpasswd sambashare -a USERNAME
+
+   # Reload samba config!
+   smbcontrol all reload-config
+   ```
+
+Now, you can go to Dolphin (KDE file explorer) and left click on a **folder > Properties > Share** and configure the settings to share your folder on the network.
+
+If you want to share paths inside your home directory you must make it accessible for the group others (Everyone).
+
+
+Links:
+https://fedoramagazine.org/fedora-32-simple-local-file-sharing-with-samba/
+https://wiki.archlinux.org/title/Samba (See advanced configuration)
